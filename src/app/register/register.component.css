@@ -2,3 +2,7 @@
 .message-row {
     margin-top: 50px;
 }
+input[type="radio"] {  
+    margin-right: 10px;
+    margin-left: 10px;
+  }

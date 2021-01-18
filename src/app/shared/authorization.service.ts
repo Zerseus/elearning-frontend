@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {AuthenticationDetails, CognitoUser, CognitoUserPool} from 'amazon-cognito-identity-js';
+import {CognitoUserAttribute, AuthenticationDetails, CognitoUser, CognitoUserPool} from 'amazon-cognito-identity-js';
 import { Observable } from 'rxjs/internal/Observable';
 //import { Observable } from 'rxjs/Observable';
 
@@ -16,10 +16,15 @@ export class AuthorizationService {
 
   constructor() { }
 
-  register(email, password) {
+  register(email, password, role) {
 
     const attributeList = [];
-
+    const dataRole = {
+      Name: 'custom:role',
+      Value: role.toString()
+    }
+    const attributeRole = new CognitoUserAttribute(dataRole);
+    attributeList.push(attributeRole);
     return Observable.create(observer => {
       userPool.signUp(email, password, attributeList, null, (err, result) => {
         if (err) {

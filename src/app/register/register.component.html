@@ -11,6 +11,23 @@
           <label for="password">Password</label>
           <input type="password" name="password" id="password" ngModel class="form-control" required>
         </div>
+      <!--  <div class="form-group">
+          <label for="role">Role</label>
+          <select class="form-control" id="role" required>
+            <option [value]="role"></option>
+          </select>
+        </div> -->
+        <div class="form-group">
+          <label class="radio-inline">
+            <input type="radio" name="role" id="role" value="student" ngModel checked> Student 
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="role" id="role" value="instructor" ngModel> Instructor 
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="role" id="role" value="both" ngModel> Both 
+          </label>
+      </div>
         <button type="submit" class="btn btn-primary">Register</button>
       </form>
     </div>

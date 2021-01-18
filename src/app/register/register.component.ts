@@ -22,7 +22,9 @@ export class RegisterComponent {
   register(form: NgForm) {
     const email = form.value.email;
     const password = form.value.password;
-    this.auth.register(email, password).subscribe(
+    const role = form.value.role;
+    console.log(role);
+    this.auth.register(email, password, role).subscribe(
       (data) => {        
         this.confirmCode = true;
       },
