@@ -13,6 +13,8 @@ import {CourseDetailsComponent} from './course/course-details/course-details.com
 import {CourseContentListComponent} from './course/course-content-list/course-content-list.component';
 import {CourseDashboardComponent} from './course/course-dashboard/course-dashboard.component';
 import {CourseListComponent} from './course/course-list/course-list.component';
+import {ContactComponent} from './header/contact/contact.component';
+import {AboutusComponent} from './header/aboutus/aboutus.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},  
@@ -54,6 +56,14 @@ const appRoutes: Routes = [
   {
     path:'course-details',
     component: CourseDetailsComponent
+  },
+  {
+    path:'aboutus',
+    component: AboutusComponent
+  },
+  {
+    path:'contact',
+    component: ContactComponent
   }
 ];
 

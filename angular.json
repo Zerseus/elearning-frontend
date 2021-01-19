@@ -35,7 +35,7 @@
               "buffer",
               "js-cookie",
               "isomorphic-unfetch"
-           ]
+            ]
           },
           "configurations": {
             "production": {
@@ -130,5 +130,8 @@
       }
     }
   },
-  "defaultProject": "elearning-app"
+  "defaultProject": "elearning-app",
+  "cli": {
+    "analytics": false
+  }
 }

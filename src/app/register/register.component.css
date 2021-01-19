@@ -2,7 +2,20 @@
 .message-row {
     margin-top: 50px;
 }
-input[type="radio"] {  
-    margin-right: 10px;
-    margin-left: 10px;
-  }
+.row{
+    left: 60%;
+    top: 70%;
+    margin-left: -25%;
+    position: absolute;
+    margin-top: -25%;
+
+}
+body{
+    background-color: aquamarine;
+}
+.container{
+    background-color:rgb(103, 122, 117);
+    height:100%;
+    width:1000;
+
+}
