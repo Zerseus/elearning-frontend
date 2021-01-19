@@ -19,7 +19,6 @@ export class HomeComponent implements OnInit {
       return;
     }
     this.bAuthenticated = true;
-    /* */
   }
 
 }
