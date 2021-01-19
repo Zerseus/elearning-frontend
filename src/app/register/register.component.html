@@ -4,20 +4,22 @@
     <div class="col-lg-4">
       <form (ngSubmit)="register(regform)" #regform="ngForm">
         <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" name="email" id="email" ngModel class="form-control">
+          <label for="firstname">First Name</label>
+          <input type="firstname" name="firstname" id="firstname" size="100" ngModel class="form-control">
         </div>
+        <div class="form-group">
+          <label for="lastname">Last Name</label>
+          <input type="lastname" name="lastname" id="lastname" size="100" ngModel class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" size="100" ngModel class="form-control">
+        </div> 
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" name="password" id="password" ngModel class="form-control" required>
+          <input type="password" name="password" id="password" size="100" ngModel class="form-control" required>
         </div>
-      <!--  <div class="form-group">
-          <label for="role">Role</label>
-          <select class="form-control" id="role" required>
-            <option [value]="role"></option>
-          </select>
-        </div> -->
-        <div class="form-group">
+      <div class="form-group">
           <label class="radio-inline">
             <input type="radio" name="role" id="role" value="student" ngModel checked> Student 
           </label>
@@ -28,7 +30,8 @@
             <input type="radio" name="role" id="role2" value="both" ngModel> Both 
           </label>
       </div>
-        <button type="submit" class="btn btn-primary">Register</button>
+      <button type="submit" class="btn btn-primary" >Register</button>
+        <p class="text-dark mb-0">Already a member?<a href="/login"  class="text-primary ml-1">Login</a></p>
       </form>
     </div>
   </div>
@@ -46,6 +49,7 @@
     </div>
   </div>
   <div *ngIf="codeWasConfirmed" class="row message-row">
+    
     <h3>Verification Code was confirmed, please click <a routerLink="/login">here</a> to login</h3>
   </div>
 </div>

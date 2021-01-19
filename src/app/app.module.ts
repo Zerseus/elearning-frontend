@@ -30,6 +30,8 @@ import { StudentDashboardComponent } from './student/student-dashboard/student-d
 import { StudentDetailsComponent } from './student/student-details/student-details.component';
 import { StudentUpdateDetailsComponent } from './student/student-update-details/student-update-details.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ContactComponent } from './header/contact/contact.component';
+import { AboutusComponent } from './header/aboutus/aboutus.component';
 
 
 @NgModule({
@@ -49,7 +51,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CourseDetailsComponent,
     CourseContentListComponent,
     CourseDashboardComponent,
-    CourseListComponent
+    CourseListComponent,
+    ContactComponent,
+    AboutusComponent
   ],
   imports: [
     BrowserModule,
