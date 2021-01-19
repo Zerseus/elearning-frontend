@@ -132,6 +132,6 @@
   },
   "defaultProject": "elearning-app",
   "cli": {
-    "analytics": "2681ef7c-a570-4fe8-9251-d33bdd29c6e7"
+    "analytics": false
   }
 }

@@ -1,0 +1,31 @@
+* {
+    margin: 0; padding: 0;
+}
+html, body, #container {
+    height: 80%;
+}
+
+main {
+    height: 100%;
+    background: green;
+}
+.half {
+    height: 50%;
+}
+.half:first-child {
+    background:darkgray;
+}
+.half:last-child {
+    background:dimgrey;
+}
+
+h1{
+    height:50%;
+    text-align: center;
+}
+p.address{
+    text-align: center;
+}
+h2{
+    text-align: center;
+}
