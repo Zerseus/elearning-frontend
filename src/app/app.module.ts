@@ -18,6 +18,8 @@ import { RestApiComponent } from './restapi/restapi.component';
 import { HttpClientModule } from '@angular/common/http';
 import {AuthorizationService} from "./shared/authorization.service";
 import {FormsModule} from "@angular/forms";
+import {ButtonModule} from 'primeng/button';
+import {ToolbarModule} from 'primeng/toolbar';
 
 import { InstructorDashboardComponent } from './instructor/instructor-dashboard/instructor-dashboard.component';
 import {InstructorDetailsComponent} from './instructor/instructor-details/instructor-details.component'
@@ -66,7 +68,9 @@ import { AboutusComponent } from './header/aboutus/aboutus.component';
     MatSidenavModule,
     MatToolbarModule,
     MatTableModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ButtonModule,
+    ToolbarModule
   ],
   providers: [AuthorizationService],
   bootstrap: [AppComponent]
