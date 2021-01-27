@@ -15,31 +15,40 @@ import {CourseDashboardComponent} from './course/course-dashboard/course-dashboa
 import {CourseListComponent} from './course/course-list/course-list.component';
 import {ContactComponent} from './header/contact/contact.component';
 import {AboutusComponent} from './header/aboutus/aboutus.component';
+import { InstructorGuard } from './shared/instructorguard.service';
+import { StudentGuard } from './shared/studentguard.service';
+import { ReverseGuard } from './shared/reverseguard.service';
+import { SearchComponent } from './search/search.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},  
-  {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent},
+  {path: 'login', component: LoginComponent, canActivate: [ReverseGuard]},
+  {path: 'register', component: RegisterComponent, canActivate: [ReverseGuard]},
   {path: 'restapi', component: RestApiComponent },
   {
     path:'instructor-dashboard',
-    component: InstructorDashboardComponent
+    component: InstructorDashboardComponent,
+    canActivate: [InstructorGuard]
   },
   {
     path:'instructor-details',
-    component: InstructorDetailsComponent
+    component: InstructorDetailsComponent,
+    canActivate: [InstructorGuard]
   },
   {
     path:'instructor-update-details',
-    component: InstructorUpdateDetailsComponent
+    component: InstructorUpdateDetailsComponent,
+    canActivate: [InstructorGuard]
   },
   {
     path:'student-dashboard',
-    component: StudentDashboardComponent
+    component: StudentDashboardComponent,
+    canActivate: [StudentGuard]
   },
   {
     path:'student-update-details',
-    component: StudentUpdateDetailsComponent
+    component: StudentUpdateDetailsComponent,
+    canActivate: [StudentGuard]
   },
   {
     path:'course-list',
@@ -64,6 +73,10 @@ const appRoutes: Routes = [
   {
     path:'contact',
     component: ContactComponent
+  },
+  {
+    path:'search',
+    component: SearchComponent
   }
 ];
 

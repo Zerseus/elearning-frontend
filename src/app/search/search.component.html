@@ -1,0 +1,102 @@
+<!-- <div *ngIf="courseList">
+    <p> {{ courseList.length }} Result(s) Found</p>
+    <table>
+        <tr>
+          <th>Courses</th>
+        </tr>
+        <tr *ngFor="let course of courseList">
+          <td> {{ course.title }} </td>
+          <td>: {{ course.description }} </td>
+        </tr>
+      </table>
+</div> -->
+
+<br>
+<div *ngIf="courseList">
+  <h2> {{ courseList.length }} Course(s) Found</h2>
+</div>
+<p-table #dt1 [value]="courseList" dataKey="id" [rows]="10" [showCurrentPageReport]="true"
+	[rowsPerPageOptions]="[10,25,50]" styleClass="p-datatable-customers p-datatable-gridlines"
+	[paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+	[globalFilterFields]="['name','country.name','representative.name','status']">
+	<ng-template pTemplate="header">
+		<tr>
+			<th>
+				<div class="p-d-flex p-jc-between p-ai-center">
+					Title
+					<p-columnFilter type="text" field="title" display="menu"></p-columnFilter>
+				</div>
+			</th>
+			<th>
+				<div class="p-d-flex p-jc-between p-ai-center">
+					Instructor
+					<p-columnFilter type="text" field="instructor" display="menu"></p-columnFilter>
+				</div>
+			</th>
+			<th>
+				<div class="p-d-flex p-jc-between p-ai-center">
+					Description
+					<p-columnFilter type="text" field="description" display="menu" ></p-columnFilter>
+				</div>
+			</th>
+			<th>
+				<div class="p-d-flex p-jc-between p-ai-center">
+					Published
+					<p-columnFilter type="boolean" field="published" display="menu" ></p-columnFilter>
+				</div>
+			</th>
+			<th>
+				<div class="p-d-flex p-jc-between p-ai-center">
+					Difficulty
+					<p-columnFilter field="difficulty" matchMode="between" display="menu" [showMatchModes]="false"
+						[showOperator]="false" [showAddButton]="false">
+						<ng-template pTemplate="filter" let-filter="filterCallback">
+							<p-slider [ngModel]="activityValues" [range]="true" (onSlideEnd)="filter($event.values)"
+								styleClass="p-m-3"></p-slider>
+							<div class="p-d-flex p-ai-center p-jc-between p-px-2">
+								<span>{{activityValues[0]}}</span>
+								<span>{{activityValues[1]}}</span>
+							</div>
+						</ng-template>
+					</p-columnFilter>
+				</div>
+			</th>
+			<th style="width: 8rem">
+				<div class="p-d-flex p-jc-between p-ai-center">
+					Verified
+					<p-columnFilter type="boolean" field="verified" display="menu"></p-columnFilter>
+				</div>
+			</th>
+		</tr>
+	</ng-template>
+	<ng-template pTemplate="body" let-course>
+		<tr>
+			<td>
+				{{course.title}}
+			</td>
+			<td>
+				<span class="image-text">{{course.instructor}}</span>
+			</td>
+			<td>
+				{{course.description}}
+      </td>
+      <td></td>
+      <td></td>
+      <td></td>
+		<!--	<td>
+				<span [class]="'customer-badge status-' + customer.status">{{customer.status}}</span>
+			</td>
+			<td>
+				<p-progressBar [value]="customer.activity" [showValue]="false"></p-progressBar>
+			</td>
+			<td class="p-text-center">
+				<i class="pi" [ngClass]="{'true-icon pi-check-circle': customer.verified, 'false-icon pi-times-circle': !customer.verified}"></i>
+			</td> -->
+		</tr>
+	</ng-template>
+	<ng-template pTemplate="emptymessage">
+		<tr>
+			<td colspan="6">No courses found.</td>
+		</tr>
+	</ng-template>
+</p-table>

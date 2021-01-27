@@ -42,7 +42,7 @@ export class RestApiComponent implements OnInit {
     //    const headers = new Headers();
     //    headers.append('Authorization', token);        
         console.log(token);
-        this.http.post<any>('https://vt198qxo2j.execute-api.us-east-1.amazonaws.com/prod/user', {title: "hello"}, { headers })
+        this.http.get<any>('https://vt198qxo2j.execute-api.us-east-1.amazonaws.com/prod/user', { headers })
           .subscribe(
           response => {           
             console.log(response);

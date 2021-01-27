@@ -32,6 +32,19 @@ import { StudentUpdateDetailsComponent } from './student/student-update-details/
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContactComponent } from './header/contact/contact.component';
 import { AboutusComponent } from './header/aboutus/aboutus.component';
+import { SearchComponent } from './search/search.component';
+
+import {TableModule} from 'primeng/table';
+import {ToastModule} from 'primeng/toast';
+import {CalendarModule} from 'primeng/calendar';
+import {SliderModule} from 'primeng/slider';
+import {MultiSelectModule} from 'primeng/multiselect';
+import {ContextMenuModule} from 'primeng/contextmenu';
+import {DialogModule} from 'primeng/dialog';
+import {ButtonModule} from 'primeng/button';
+import {DropdownModule} from 'primeng/dropdown';
+import {ProgressBarModule} from 'primeng/progressbar';
+import {InputTextModule} from 'primeng/inputtext';
 
 
 @NgModule({
@@ -53,7 +66,8 @@ import { AboutusComponent } from './header/aboutus/aboutus.component';
     CourseDashboardComponent,
     CourseListComponent,
     ContactComponent,
-    AboutusComponent
+    AboutusComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +80,18 @@ import { AboutusComponent } from './header/aboutus/aboutus.component';
     MatSidenavModule,
     MatToolbarModule,
     MatTableModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    TableModule,
+    CalendarModule,
+		SliderModule,
+		DialogModule,
+		MultiSelectModule,
+		ContextMenuModule,
+		DropdownModule,
+		ButtonModule,
+		ToastModule,
+    InputTextModule,
+    ProgressBarModule,
   ],
   providers: [AuthorizationService],
   bootstrap: [AppComponent]
