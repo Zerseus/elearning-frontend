@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AuthorizationService} from "../shared/authorization.service";
 import {NgForm} from "@angular/forms";
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { LoginService } from './login.service';
 
 @Component({
   selector: 'app-login',
@@ -12,11 +12,13 @@ import { HttpClient } from '@angular/common/http';
 export class LoginComponent {
   emailVerificationMessage: boolean = false;
 
-  constructor(private http: HttpClient,
+  constructor(private _login: LoginService,
               private auth: AuthorizationService,
               private _router: Router) {
 
   }
+
+  
 
   onSubmit(form: NgForm) {
 
@@ -39,16 +41,16 @@ export class LoginComponent {
     //    const headers = new Headers();
     //    headers.append('Authorization', token);        
         console.log(token);
-        this.http.post<any>('https://vt198qxo2j.execute-api.us-east-1.amazonaws.com/prod/user', {title: "hello"}, { headers })
+        this._login.sendData(headers)
           .subscribe(
           response => {           
             console.log(response);
-          /*  if(response == "student")
-              this._router.navigateByUrl('/student-dashboard');
+       /*     if(response == "student")
+              this._router.navigateByUrl('student-dashboard');
             else if(response == "instructor")
-              this._router.navigateByUrl('/instructor-dashboard');
+              this._router.navigateByUrl('instructor-dashboard');
             else if(response == "both")
-              this._router.navigateByUrl('/choice-dashboard');
+              this._router.navigateByUrl('choice-dashboard');
             else 
               this._router.navigateByUrl('/'); */
           },
@@ -58,7 +60,7 @@ export class LoginComponent {
         );
       });
 
-      this._router.navigateByUrl('/');
+      this._router.navigateByUrl('student');
     }, (err)=> {
       this.emailVerificationMessage = true;
     });   

@@ -1,27 +1,55 @@
-import {NgModule} from '@angular/core';
+import {Input, NgModule} from '@angular/core';
 import {RouterModule, Routes} from "@angular/router";
+
 import {HomeComponent} from "./home/home.component";
 import {RestApiComponent} from "./restapi/restapi.component";
 import {LoginComponent} from "./login/login.component";
 import {RegisterComponent} from "./register/register.component";
+
 import {InstructorDashboardComponent} from './instructor/instructor-dashboard/instructor-dashboard.component';
-import {InstructorDetailsComponent} from './instructor/instructor-details/instructor-details.component'
-import {InstructorUpdateDetailsComponent} from './instructor/instructor-update-details/instructor-update-details.component'
+import {InstructorDetailsComponent} from './instructor/instructor-details/instructor-details.component';
+import {InstructorUpdateDetailsComponent} from './instructor/instructor-update-details/instructor-update-details.component';
+
 import {StudentDashboardComponent} from './student/student-dashboard/student-dashboard.component';
 import {StudentUpdateDetailsComponent} from './student/student-update-details/student-update-details.component';
+import { StudentDetailsComponent } from './student/student-details/student-details.component';
+
 import {CourseDetailsComponent} from './course/course-details/course-details.component';
 import {CourseContentListComponent} from './course/course-content-list/course-content-list.component';
 import {CourseDashboardComponent} from './course/course-dashboard/course-dashboard.component';
 import {CourseListComponent} from './course/course-list/course-list.component';
+
 import {ContactComponent} from './header/contact/contact.component';
 import {AboutusComponent} from './header/aboutus/aboutus.component';
+
+
 import { InstructorGuard } from './shared/instructorguard.service';
 import { StudentGuard } from './shared/studentguard.service';
 import { ReverseGuard } from './shared/reverseguard.service';
+
+import {DefaultComponent} from './layouts/default/default.component';
 import { SearchComponent } from './search/search.component';
 
 const appRoutes: Routes = [
-  {path: '', component: HomeComponent},  
+  {path: '', component: HomeComponent},
+  {path: 'student', component: DefaultComponent, children: [
+    {
+      path:'student-dashboard',
+      component: StudentDashboardComponent
+    },
+    {
+      path:'student-details',
+      component: StudentDetailsComponent
+    },
+    {
+      path:'student-update-details',
+      component: StudentUpdateDetailsComponent
+    },
+    {
+      path:'search',
+      component: SearchComponent
+    }
+  ]},  
   {path: 'login', component: LoginComponent, canActivate: [ReverseGuard]},
   {path: 'register', component: RegisterComponent, canActivate: [ReverseGuard]},
   {path: 'restapi', component: RestApiComponent },
@@ -39,16 +67,6 @@ const appRoutes: Routes = [
     path:'instructor-update-details',
     component: InstructorUpdateDetailsComponent,
     canActivate: [InstructorGuard]
-  },
-  {
-    path:'student-dashboard',
-    component: StudentDashboardComponent,
-    canActivate: [StudentGuard]
-  },
-  {
-    path:'student-update-details',
-    component: StudentUpdateDetailsComponent,
-    canActivate: [StudentGuard]
   },
   {
     path:'course-list',

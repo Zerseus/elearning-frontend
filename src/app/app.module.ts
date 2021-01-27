@@ -33,7 +33,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContactComponent } from './header/contact/contact.component';
 import { AboutusComponent } from './header/aboutus/aboutus.component';
 import { SearchComponent } from './search/search.component';
+import { DefaultComponent } from './layouts/default/default.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
+import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
+import {SheaderComponent} from './shared/components/sheader/sheader.component';
 
+import {ToolbarModule} from 'primeng/toolbar';
 import {TableModule} from 'primeng/table';
 import {ToastModule} from 'primeng/toast';
 import {CalendarModule} from 'primeng/calendar';
@@ -67,7 +72,11 @@ import {InputTextModule} from 'primeng/inputtext';
     CourseListComponent,
     ContactComponent,
     AboutusComponent,
-    SearchComponent
+    SearchComponent,
+    DefaultComponent,
+    FooterComponent,
+    SidebarComponent,
+    SheaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -92,6 +101,7 @@ import {InputTextModule} from 'primeng/inputtext';
 		ToastModule,
     InputTextModule,
     ProgressBarModule,
+    ToolbarModule
   ],
   providers: [AuthorizationService],
   bootstrap: [AppComponent]
