@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { CourseService } from '../course.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Course } from '../course.model';
 @Component({
   selector: 'app-course-details',
   templateUrl: './course-details.component.html',
@@ -7,9 +9,76 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CourseDetailsComponent implements OnInit {
 
-  constructor() { }
+  currentCourse: Course = {
+    title: '',
+    description: '',
+    published: false
+  };
+  message = '';
+
+  constructor(
+    private courseService: CourseService,
+    private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
+    this.message = '';
+    this.getCourse(this.route.snapshot.params.id);
+  }
+
+  getCourse(id: string): void {
+    this.courseService.get(id)
+      .subscribe(
+        data => {
+          this.currentCourse = data;
+          console.log(data);
+        },
+        error => {
+          console.log(error);
+        });
+  }
+
+  updatePublished(status: boolean): void {
+    const data = {
+      title: this.currentCourse.title,
+      description: this.currentCourse.description,
+      published: status
+    };
+
+    this.courseService.update(this.currentCourse.id, data)
+      .subscribe(
+        response => {
+          this.currentCourse.published = status;
+          console.log(response);
+          this.message = response.message;
+        },
+        error => {
+          console.log(error);
+        });
+  }
+
+  updateCourse(): void {
+    this.courseService.update(this.currentCourse.id, this.currentCourse)
+      .subscribe(
+        response => {
+          console.log(response);
+          this.message = response.message;
+        },
+        error => {
+          console.log(error);
+        });
+  }
+
+  deleteCourse(): void {
+    this.courseService.delete(this.currentCourse.id)
+      .subscribe(
+        response => {
+          console.log(response);
+          this.router.navigate(['/instructor/courses']);
+        },
+        error => {
+          console.log(error);
+        });
   }
 
 }

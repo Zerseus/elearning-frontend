@@ -34,13 +34,13 @@ export class StudentGuard implements CanActivate {
 
     canActivate() {
         // Check to see if a user has a valid token
-        if (this._auth.isLoggedIn() && this._auth.isStudent() || this._auth.isBoth()) {
+        if (this._auth.isLoggedIn() && this._auth.isStudent()) {
             // If they do, return true and allow the user to load app
             return true;
         }
 
         // If not, they redirect them to the login page
-        this.router.navigateByUrl('/');
+        this.router.navigateByUrl('/login');
         return false;
     }
 

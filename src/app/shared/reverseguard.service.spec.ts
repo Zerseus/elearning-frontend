@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ReverseguardService } from './reverseguard.service';
+import { ReverseGuard } from './reverseguard.service';
 
-describe('ReverseguardService', () => {
-  let service: ReverseguardService;
+describe('ReverseGuard', () => {
+  let service: ReverseGuard;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(ReverseguardService);
+    service = TestBed.inject(ReverseGuard);
   });
 
   it('should be created', () => {

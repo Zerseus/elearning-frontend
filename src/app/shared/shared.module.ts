@@ -15,6 +15,8 @@ import { NO_ERRORS_SCHEMA,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { StudentDetailsComponent } from 'src/app/student/student-details/student-details.component';
 import {MatCardModule} from '@angular/material/card';
 import {HomeComponent} from 'src/app/home/home.component';
+import { ISidebarComponent } from './components/i-sidebar/i-sidebar.component';
+import { IHeaderComponent } from './components/i-header/i-header.component';
 
 
 
@@ -24,7 +26,9 @@ import {HomeComponent} from 'src/app/home/home.component';
     SidebarComponent,
     FooterComponent,
     SheaderComponent,
-    HomeComponent
+    HomeComponent,
+    ISidebarComponent,
+    IHeaderComponent
   ],
   imports: [
     CommonModule,

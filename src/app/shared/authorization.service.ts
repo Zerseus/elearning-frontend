@@ -113,7 +113,7 @@ export class AuthorizationService {
       this.getAuthenticatedUser().getSession((err, session) => {
         if (err) {
           console.log(err);
-          return;
+          return false;
         }
         newToken = session.getIdToken().getJwtToken();
         decodedToken = jwt_decode.default(newToken);
@@ -132,7 +132,7 @@ export class AuthorizationService {
     this.getAuthenticatedUser().getSession((err, session) => {
       if (err) {
         console.log(err);
-        return;
+        return false;
       }
       newToken = session.getIdToken().getJwtToken();
       decodedToken = jwt_decode.default(newToken);

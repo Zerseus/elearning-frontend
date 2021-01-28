@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { AuthorizationService } from '../../authorization.service';
 
 @Component({
-  selector: 'app-sheader',
-  templateUrl: './sheader.component.html',
-  styleUrls: ['./sheader.component.css']
+  selector: 'app-i-header',
+  templateUrl: './i-header.component.html',
+  styleUrls: ['./i-header.component.css']
 })
-export class SheaderComponent implements OnInit {
+export class IHeaderComponent implements OnInit {
 
   @Output() toggleSideBarForMe: EventEmitter<any> =new EventEmitter()
   constructor(public _auth: AuthorizationService,

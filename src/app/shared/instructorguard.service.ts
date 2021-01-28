@@ -40,7 +40,7 @@ export class InstructorGuard implements CanActivate {
         }
 
         // If not, they redirect them to the login page
-        this.router.navigateByUrl('/');
+        this.router.navigateByUrl('/login');
         return false;
     }
 

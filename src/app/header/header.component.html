@@ -28,8 +28,9 @@
   </form>
  
   <a mat-raised-button="accent" style="margin-left:40.5em" *ngIf="!_auth.isLoggedIn()" routerLink="/login">LOGIN</a>
-  <a *ngIf="_auth.isLoggedIn()" href="javascript:void(0)" (click)="doLogout()">Logout</a>
- 
+  <a mat-raised-button="accent" style="margin-left:30.5em" *ngIf="_auth.isLoggedIn() && _auth.isStudent()" routerLink="/student">Your Dashboard</a>
+  <a mat-raised-button="accent" style="margin-left:30.5em" *ngIf="_auth.isLoggedIn() && _auth.isInstructor()" routerLink="/instructor">Your Dashboard</a>
 </mat-toolbar>
+
 
 

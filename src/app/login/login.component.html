@@ -4,17 +4,21 @@
     <div class="col-lg-4">
       <form  (ngSubmit)="onSubmit(f)" #f="ngForm">
 
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" name="email" id="email" size="100" ngModel class="form-control" required>
+        <div class="p-field p-grid">
+          <label for="email" class="p-col-fixed" style="width:100px">Email</label>
+          <div class="p-col">
+            <input type="email" name="email" id="email" size="150" ngModel class="form-control" required>
+          </div>
+          </div>
+
+        <div class="p-field p-grid">
+          <label for="password" class="p-col-fixed" style="width:100px">Password</label>
+          <div class="p-col">
+            <input type="password" name="password" id="password" size="150" ngModel class="form-control" required>
+          </div>
         </div>
 
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" name="password" id="password" ngModel class="form-control" required>
-        </div>
-
-        <button type="submit" class="btn btn-primary" style="margin-left:auto;margin-right:auto;display:block;margin-top:22%;margin-bottom:0%" routerLink="/student">Login</button>
+        <button type="submit" class="btn btn-primary" style="margin-left:auto;margin-right:auto;display:block;margin-bottom:0%">Login</button>
 
       </form>
     </div>

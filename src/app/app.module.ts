@@ -18,6 +18,7 @@ import { RestApiComponent } from './restapi/restapi.component';
 import { HttpClientModule } from '@angular/common/http';
 import {AuthorizationService} from "./shared/authorization.service";
 import {FormsModule} from "@angular/forms";
+import {MatCardModule} from '@angular/material/card';
 
 import { InstructorDashboardComponent } from './instructor/instructor-dashboard/instructor-dashboard.component';
 import {InstructorDetailsComponent} from './instructor/instructor-details/instructor-details.component'
@@ -36,7 +37,10 @@ import { SearchComponent } from './search/search.component';
 import { DefaultComponent } from './layouts/default/default.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
+import { ISidebarComponent } from './shared/components/i-sidebar/i-sidebar.component';
 import {SheaderComponent} from './shared/components/sheader/sheader.component';
+import { IHeaderComponent } from './shared/components/i-header/i-header.component';
+import { AddCourseComponent } from './course/add-course/add-course.component';
 
 import {ToolbarModule} from 'primeng/toolbar';
 import {TableModule} from 'primeng/table';
@@ -51,6 +55,8 @@ import {DropdownModule} from 'primeng/dropdown';
 import {ProgressBarModule} from 'primeng/progressbar';
 import {InputTextModule} from 'primeng/inputtext';
 
+import { WavesModule, ModalModule, CarouselModule } from 'angular-bootstrap-md'
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -76,7 +82,10 @@ import {InputTextModule} from 'primeng/inputtext';
     DefaultComponent,
     FooterComponent,
     SidebarComponent,
+    ISidebarComponent,
     SheaderComponent,
+    IHeaderComponent,
+    AddCourseComponent
   ],
   imports: [
     BrowserModule,
@@ -101,7 +110,12 @@ import {InputTextModule} from 'primeng/inputtext';
 		ToastModule,
     InputTextModule,
     ProgressBarModule,
-    ToolbarModule
+    ToolbarModule,
+    WavesModule,
+    ModalModule,
+    CarouselModule,
+    MatCardModule,
+    MatGridListModule
   ],
   providers: [AuthorizationService],
   bootstrap: [AppComponent]
