@@ -18,8 +18,7 @@ import { RestApiComponent } from './restapi/restapi.component';
 import { HttpClientModule } from '@angular/common/http';
 import {AuthorizationService} from "./shared/authorization.service";
 import {FormsModule} from "@angular/forms";
-import {ButtonModule} from 'primeng/button';
-import {ToolbarModule} from 'primeng/toolbar';
+
 
 import { InstructorDashboardComponent } from './instructor/instructor-dashboard/instructor-dashboard.component';
 import {InstructorDetailsComponent} from './instructor/instructor-details/instructor-details.component'
@@ -34,6 +33,24 @@ import { StudentUpdateDetailsComponent } from './student/student-update-details/
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContactComponent } from './header/contact/contact.component';
 import { AboutusComponent } from './header/aboutus/aboutus.component';
+import { SearchComponent } from './search/search.component';
+import { DefaultComponent } from './layouts/default/default.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
+import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
+import {SheaderComponent} from './shared/components/sheader/sheader.component';
+
+import {ToolbarModule} from 'primeng/toolbar';
+import {TableModule} from 'primeng/table';
+import {ToastModule} from 'primeng/toast';
+import {CalendarModule} from 'primeng/calendar';
+import {SliderModule} from 'primeng/slider';
+import {MultiSelectModule} from 'primeng/multiselect';
+import {ContextMenuModule} from 'primeng/contextmenu';
+import {DialogModule} from 'primeng/dialog';
+import {ButtonModule} from 'primeng/button';
+import {DropdownModule} from 'primeng/dropdown';
+import {ProgressBarModule} from 'primeng/progressbar';
+import {InputTextModule} from 'primeng/inputtext';
 
 
 @NgModule({
@@ -55,7 +72,12 @@ import { AboutusComponent } from './header/aboutus/aboutus.component';
     CourseDashboardComponent,
     CourseListComponent,
     ContactComponent,
-    AboutusComponent
+    AboutusComponent,
+    SearchComponent,
+    DefaultComponent,
+    FooterComponent,
+    SidebarComponent,
+    SheaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,7 +91,17 @@ import { AboutusComponent } from './header/aboutus/aboutus.component';
     MatToolbarModule,
     MatTableModule,
     BrowserAnimationsModule,
-    ButtonModule,
+    TableModule,
+    CalendarModule,
+		SliderModule,
+		DialogModule,
+		MultiSelectModule,
+		ContextMenuModule,
+		DropdownModule,
+		ButtonModule,
+		ToastModule,
+    InputTextModule,
+    ProgressBarModule,
     ToolbarModule
   ],
   providers: [AuthorizationService],

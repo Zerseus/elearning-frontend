@@ -1,0 +1,12 @@
+{
+    "/restapi": {
+        "target": "http://localhost:5000",
+        "secure": false,
+        "logLevel": "debug"
+    },
+    "/user": {
+        "target": "http://localhost:8082",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}

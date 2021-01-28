@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {CognitoUserAttribute, AuthenticationDetails, CognitoUser, CognitoUserPool} from 'amazon-cognito-identity-js';
 import { Observable } from 'rxjs/internal/Observable';
+import * as jwt_decode from 'jwt-decode';
 //import { Observable } from 'rxjs/Observable';
 
 const poolData = {
@@ -103,5 +104,62 @@ export class AuthorizationService {
   logOut() {
     this.getAuthenticatedUser().signOut();
     this.cognitoUser = null;
+  }
+
+  isBoth() {
+    //  const jwtDecode = require('jwt-decode');
+      let newToken;
+      let decodedToken;
+      this.getAuthenticatedUser().getSession((err, session) => {
+        if (err) {
+          console.log(err);
+          return;
+        }
+        newToken = session.getIdToken().getJwtToken();
+        decodedToken = jwt_decode.default(newToken);
+        console.log(decodedToken['custom:role']);
+      });
+      console.log(decodedToken['custom:role']);
+      if( decodedToken['custom:role'] == 'both' )
+          return true;
+      return false;
+    }
+
+  isInstructor() {
+  //  const jwtDecode = require('jwt-decode');
+    let newToken;
+    let decodedToken;
+    this.getAuthenticatedUser().getSession((err, session) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      newToken = session.getIdToken().getJwtToken();
+      decodedToken = jwt_decode.default(newToken);
+      console.log(decodedToken['custom:role']);
+    });
+    console.log(decodedToken['custom:role']);
+    if( decodedToken['custom:role'] == 'instructor' )
+        return true;
+    return false;
+  }
+
+  isStudent() {
+  //  const jwtDecode = require('jwt-decode');
+    let newToken;
+    let decodedToken;
+    this.getAuthenticatedUser().getSession((err, session) => {
+      if (err) {
+        console.log(err);
+        return false;
+      }
+      newToken = session.getIdToken().getJwtToken();
+      decodedToken = jwt_decode.default(newToken);
+      console.log(decodedToken['custom:role']);
+    });
+    console.log(decodedToken['custom:role']);
+    if( decodedToken['custom:role'] == 'student' )
+          return true;
+      return false;
   }
 }
