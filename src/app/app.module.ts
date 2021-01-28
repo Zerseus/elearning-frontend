@@ -34,6 +34,14 @@ import { StudentUpdateDetailsComponent } from './student/student-update-details/
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContactComponent } from './header/contact/contact.component';
 import { AboutusComponent } from './header/aboutus/aboutus.component';
+import { DefaultComponent } from './layouts/default/default.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
+import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
+import {SheaderComponent} from './shared/components/sheader/sheader.component';
+import {MatCardModule} from '@angular/material/card';
+import {CardComponent} from './shared/card/card.component';
+import { HighchartsChartModule } from 'highcharts-angular';
+
 
 
 @NgModule({
@@ -55,7 +63,12 @@ import { AboutusComponent } from './header/aboutus/aboutus.component';
     CourseDashboardComponent,
     CourseListComponent,
     ContactComponent,
-    AboutusComponent
+    AboutusComponent,
+    DefaultComponent,
+    FooterComponent,
+    SidebarComponent,
+    SheaderComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
@@ -70,7 +83,10 @@ import { AboutusComponent } from './header/aboutus/aboutus.component';
     MatTableModule,
     BrowserAnimationsModule,
     ButtonModule,
-    ToolbarModule
+    ToolbarModule,
+    MatCardModule,
+    HighchartsChartModule,
+    
   ],
   providers: [AuthorizationService],
   bootstrap: [AppComponent]

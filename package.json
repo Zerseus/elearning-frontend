@@ -2,13 +2,7 @@
   "name": "elearning-app",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-    "web": "webpack"
+    "postinstall": "ngcc"
   },
   "private": true,
   "dependencies": {
@@ -17,6 +11,7 @@
     "@angular/common": "~11.0.5",
     "@angular/compiler": "~11.0.5",
     "@angular/core": "~11.0.5",
+    "@angular/flex-layout": "^11.0.0-beta.33",
     "@angular/forms": "~11.0.5",
     "@angular/material": "^11.0.4",
     "@angular/platform-browser": "~11.0.5",
@@ -24,6 +19,9 @@
     "@angular/router": "~11.0.5",
     "amazon-cognito-identity-js": "^4.5.7",
     "bootstrap": "^4.5.3",
+    "highcharts": "^8.2.2",
+    "highcharts-angular": "^2.9.0",
+    "ng-uikit-pro-standard": "^1.0.0",
     "primeicons": "^4.1.0",
     "primeng": "^11.1.0",
     "rxjs": "^6.6.3",

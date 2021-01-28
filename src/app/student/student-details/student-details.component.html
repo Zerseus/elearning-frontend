@@ -1,52 +1,25 @@
-<h1>student-details works!</h1>
-<html>
-<head>
-<style>
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
 
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
+<p>student-update-details works</p>
 
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-</style>
-</head>
-<body>
-
-<h2>Student details</h2>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Contact</th>
-    <th>Country</th>
-  </tr>
-  <tr>
-    <td>Bhanvi</td>
-    <td>7899</td>
-    <td>india</td>
-  </tr>
-  <tr>
-    <td>chang</td>
-    <td>588 </td>
-    <td>Mexico</td>
-  </tr>
-  <tr>
-    <td>Ernst Handel</td>
-    <td>098</td>
-    <td>Austria</td>
-  </tr>
+<br>
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="50px" class="stats-cards">
+    <mat-card fxFlex="25">
+       
+       <app-card label="Subject1" total="100%" percentage="50"></app-card>
+       
+    </mat-card>
+    <mat-card fxFlex="10">
+        <app-card label="Subject2" total="100%" percentage="50"></app-card>
+        
+     </mat-card>
+     <mat-card fxFlex="10">
+        <app-card label="Subject3" total="100%" percentage="50"></app-card>
+        
+     </mat-card>
+     <mat-card fxFlex="10">
+        <app-card label="Subject4" total="100%" percentage="50"></app-card>
+        
+     </mat-card>
   
-  
-</table>
-
-</body>
-</html>
+</div>
+<br>
