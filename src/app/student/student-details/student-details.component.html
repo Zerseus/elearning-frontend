@@ -1,7 +1,7 @@
 
 <p>student-update-details works</p>
 
-<br>
+<!--<br>
 <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="50px" class="stats-cards">
     <mat-card fxFlex="25">
        
@@ -23,3 +23,25 @@
   
 </div>
 <br>
+-->
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nmae</th>
+        <th scope="col">email address</th>
+        <th scope="col">phone</th>
+      </tr>
+      </thead>
+      <tbody> 
+      <tr *ngFor="let Student details">
+        <td>{{studentdetails.id}}</td>
+        <td>{{studentdetails.name}}</td>
+        <td>{{studentdetails.emailaddress}}</td>
+        <td>{{studentdetails.phoneno}}</td>
+      </tr>
+</tbody>
+    
+  
+  </table>
