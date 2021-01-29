@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+=======
+>>>>>>> bhanvi
 
 @Component({
   selector: 'app-sidebar',
@@ -9,11 +12,16 @@ import { Router } from '@angular/router';
 })
 export class SidebarComponent implements OnInit {
 
+<<<<<<< HEAD
   constructor(private _router: Router) { }
+=======
+  constructor() { }
+>>>>>>> bhanvi
 
   ngOnInit(): void {
   }
 
+<<<<<<< HEAD
   onSubmit(form: NgForm){
     const title = form.value.search;
     console.log(title);
@@ -22,4 +30,6 @@ export class SidebarComponent implements OnInit {
     this._router.navigate(['/student/search'], {queryParams: {title: title}}));
   }
 
+=======
+>>>>>>> bhanvi
 }

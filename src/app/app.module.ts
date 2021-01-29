@@ -37,6 +37,7 @@ import { StudentUpdateDetailsComponent } from './student/student-update-details/
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContactComponent } from './header/contact/contact.component';
 import { AboutusComponent } from './header/aboutus/aboutus.component';
+<<<<<<< HEAD
 import { SearchComponent } from './search/search.component';
 import { DefaultComponent } from './layouts/default/default.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
@@ -58,6 +59,16 @@ import {ButtonModule} from 'primeng/button';
 import {DropdownModule} from 'primeng/dropdown';
 import {ProgressBarModule} from 'primeng/progressbar';
 import {InputTextModule} from 'primeng/inputtext';
+=======
+import { DefaultComponent } from './layouts/default/default.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
+import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
+import {SheaderComponent} from './shared/components/sheader/sheader.component';
+import {MatCardModule} from '@angular/material/card';
+import {CardComponent} from './shared/card/card.component';
+import { HighchartsChartModule } from 'highcharts-angular';
+
+>>>>>>> bhanvi
 
 import { WavesModule, ModalModule, CarouselModule } from 'angular-bootstrap-md'
 import {MatGridListModule} from '@angular/material/grid-list';
@@ -82,6 +93,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     CourseListComponent,
     ContactComponent,
     AboutusComponent,
+<<<<<<< HEAD
     SearchComponent,
     DefaultComponent,
     FooterComponent,
@@ -90,6 +102,13 @@ import {MatGridListModule} from '@angular/material/grid-list';
     SheaderComponent,
     IHeaderComponent,
     AddCourseComponent
+=======
+    DefaultComponent,
+    FooterComponent,
+    SidebarComponent,
+    SheaderComponent,
+    CardComponent
+>>>>>>> bhanvi
   ],
   imports: [
     BrowserModule,
@@ -103,6 +122,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatToolbarModule,
     MatTableModule,
     BrowserAnimationsModule,
+<<<<<<< HEAD
     TableModule,
     CalendarModule,
 		SliderModule,
@@ -120,6 +140,13 @@ import {MatGridListModule} from '@angular/material/grid-list';
     CarouselModule,
     MatCardModule,
     MatGridListModule
+=======
+    ButtonModule,
+    ToolbarModule,
+    MatCardModule,
+    HighchartsChartModule,
+    
+>>>>>>> bhanvi
   ],
   providers: [AuthorizationService],
   bootstrap: [AppComponent]

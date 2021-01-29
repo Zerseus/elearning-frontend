@@ -49,3 +49,9 @@ export class StudentUpdateDetailsComponent implements OnInit {
       this.editField = event.target.textContent;
     }
 }
+
+  
+
+
+
+

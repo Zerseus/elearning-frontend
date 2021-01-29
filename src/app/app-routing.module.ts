@@ -22,13 +22,16 @@ import { AddCourseComponent } from './course/add-course/add-course.component';
 
 import {ContactComponent} from './header/contact/contact.component';
 import {AboutusComponent} from './header/aboutus/aboutus.component';
+import {DefaultComponent} from './layouts/default/default.component';
+import {HeaderComponent} from './header/header.component';
+
 
 
 import { InstructorGuard } from './shared/instructorguard.service';
 import { StudentGuard } from './shared/studentguard.service';
 import { ReverseGuard } from './shared/reverseguard.service';
 
-import {DefaultComponent} from './layouts/default/default.component';
+
 import { SearchComponent } from './search/search.component';
 
 const appRoutes: Routes = [
@@ -80,6 +83,9 @@ const appRoutes: Routes = [
   {path: 'login', component: LoginComponent, canActivate: [ReverseGuard]},
   {path: 'register', component: RegisterComponent, canActivate: [ReverseGuard]},
   {path: 'restapi', component: RestApiComponent },
+  {path: 'header', component: HeaderComponent },
+  {path: 'student-details', component: StudentDetailsComponent },
+
   {
     path:'course-dashboard',
     component: CourseDashboardComponent

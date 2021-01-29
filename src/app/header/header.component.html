@@ -18,6 +18,7 @@
 <mat-toolbar color="primary">
   <a mat-button routerLink="/"><span><mat-icon>book</mat-icon>ELEARNING</span></a>
 <div class="spacer"></div>
+
   <a mat-button href="/contact">Contact Us</a>
   <a mat-button href="/aboutus">About Us</a>
   <a mat-button *ngIf="!_auth.isLoggedIn()" routerLink="/register">REGISTER</a>

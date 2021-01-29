@@ -1,3 +1,4 @@
+
 <mat-grid-list cols="5" rowWidth="5:1" rowHeight="320px">
     <mat-grid-tile>
     <mat-card class="example-card">
@@ -184,8 +185,52 @@
 
 
 
-<<<<<<< HEAD
 
-=======
+
+<p>student-update-details works</p>
+
+<!--<br>
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="50px" class="stats-cards">
+    <mat-card fxFlex="25">
+       
+       <app-card label="Subject1" total="100%" percentage="50"></app-card>
+       
+    </mat-card>
+    <mat-card fxFlex="10">
+        <app-card label="Subject2" total="100%" percentage="50"></app-card>
+        
+     </mat-card>
+     <mat-card fxFlex="10">
+        <app-card label="Subject3" total="100%" percentage="50"></app-card>
+        
+     </mat-card>
+     <mat-card fxFlex="10">
+        <app-card label="Subject4" total="100%" percentage="50"></app-card>
+        
+     </mat-card>
   
->>>>>>> 431c1cfaa92228383f82a9b9e6e144fd46fa1f6c
+</div>
+<br>
+-->
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nmae</th>
+        <th scope="col">email address</th>
+        <th scope="col">phone</th>
+      </tr>
+      </thead>
+      <tbody> 
+      <tr *ngFor="let Student details">
+        <td>{{studentdetails.id}}</td>
+        <td>{{studentdetails.name}}</td>
+        <td>{{studentdetails.emailaddress}}</td>
+        <td>{{studentdetails.phoneno}}</td>
+      </tr>
+</tbody>
+    
+  
+  </table>
+
