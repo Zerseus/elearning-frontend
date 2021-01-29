@@ -19,7 +19,10 @@ import { HttpClientModule } from '@angular/common/http';
 import {AuthorizationService} from "./shared/authorization.service";
 import {FormsModule} from "@angular/forms";
 import {MatCardModule} from '@angular/material/card';
+<<<<<<< HEAD
 
+=======
+>>>>>>> 431c1cfaa92228383f82a9b9e6e144fd46fa1f6c
 
 import { InstructorDashboardComponent } from './instructor/instructor-dashboard/instructor-dashboard.component';
 import {InstructorDetailsComponent} from './instructor/instructor-details/instructor-details.component'
