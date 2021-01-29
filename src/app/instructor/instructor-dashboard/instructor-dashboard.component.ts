@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InstructorDashboardComponent implements OnInit {
 
+  sideBarOpen = true;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  sideBarToggler() {
+    this.sideBarOpen = !this.sideBarOpen;
   }
 
 }

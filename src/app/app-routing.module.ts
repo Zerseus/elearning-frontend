@@ -1,5 +1,5 @@
 import {Input, NgModule} from '@angular/core';
-import {RouterModule, Routes} from "@angular/router";
+import {Routes, RouterModule} from "@angular/router";
 
 import {HomeComponent} from "./home/home.component";
 import {RestApiComponent} from "./restapi/restapi.component";
@@ -18,6 +18,7 @@ import {CourseDetailsComponent} from './course/course-details/course-details.com
 import {CourseContentListComponent} from './course/course-content-list/course-content-list.component';
 import {CourseDashboardComponent} from './course/course-dashboard/course-dashboard.component';
 import {CourseListComponent} from './course/course-list/course-list.component';
+import { AddCourseComponent } from './course/add-course/add-course.component';
 
 import {ContactComponent} from './header/contact/contact.component';
 import {AboutusComponent} from './header/aboutus/aboutus.component';
@@ -49,29 +50,36 @@ const appRoutes: Routes = [
       path:'search',
       component: SearchComponent
     }
-  ]},  
+  ], canActivate: [StudentGuard]},  
+  {path: 'instructor', component: InstructorDashboardComponent, children: [
+    {
+      path:'instructor-details',
+      component: InstructorDetailsComponent
+    },
+    {
+      path:'instructor-update-details',
+      component: InstructorUpdateDetailsComponent
+    },
+    {
+      path:'search',
+      component: SearchComponent
+    },
+    {
+      path: 'add',
+      component: AddCourseComponent
+    },
+    {
+      path:'courses/:id',
+      component: CourseDetailsComponent
+    },
+    {
+      path:'courses',
+      component: CourseListComponent
+    }
+  ], canActivate: [InstructorGuard]},  
   {path: 'login', component: LoginComponent, canActivate: [ReverseGuard]},
   {path: 'register', component: RegisterComponent, canActivate: [ReverseGuard]},
   {path: 'restapi', component: RestApiComponent },
-  {
-    path:'instructor-dashboard',
-    component: InstructorDashboardComponent,
-    canActivate: [InstructorGuard]
-  },
-  {
-    path:'instructor-details',
-    component: InstructorDetailsComponent,
-    canActivate: [InstructorGuard]
-  },
-  {
-    path:'instructor-update-details',
-    component: InstructorUpdateDetailsComponent,
-    canActivate: [InstructorGuard]
-  },
-  {
-    path:'course-list',
-    component: CourseListComponent
-  },
   {
     path:'course-dashboard',
     component: CourseDashboardComponent
@@ -79,10 +87,6 @@ const appRoutes: Routes = [
   {
     path:'course-content-list',
     component: CourseContentListComponent
-  },
-  {
-    path:'course-details',
-    component: CourseDetailsComponent
   },
   {
     path:'aboutus',

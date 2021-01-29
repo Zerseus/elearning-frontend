@@ -45,14 +45,14 @@ export class LoginComponent {
           .subscribe(
           response => {           
             console.log(response);
-       /*     if(response == "student")
-              this._router.navigateByUrl('student-dashboard');
+            if(response == "student")
+              this._router.navigateByUrl('/student');
             else if(response == "instructor")
-              this._router.navigateByUrl('instructor-dashboard');
+              this._router.navigateByUrl('/instructor');
             else if(response == "both")
               this._router.navigateByUrl('choice-dashboard');
             else 
-              this._router.navigateByUrl('/'); */
+              this._router.navigateByUrl('/');
           },
           error => {
             console.log(error);
@@ -60,7 +60,7 @@ export class LoginComponent {
         );
       });
 
-      this._router.navigateByUrl('student');
+     // this._router.navigateByUrl('instructor');
     }, (err)=> {
       this.emailVerificationMessage = true;
     });   

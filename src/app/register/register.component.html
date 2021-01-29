@@ -3,35 +3,43 @@
   <div class="row">
     <div class="col-lg-4">
       <form (ngSubmit)="register(regform)" #regform="ngForm">
-        <div class="form-group">
-          <label for="firstname">First Name</label>
-          <input type="firstname" name="firstname" id="firstname" size="100" ngModel class="form-control">
+        <div class="p-field p-grid">
+          <label for="firstname" class="p-col-fixed" style="width:100px">First Name</label>
+          <div class="p-col">
+            <input type="firstname" name="firstname" id="firstname" size="150" ngModel class="form-control">
+          </div>
         </div>
-        <div class="form-group">
-          <label for="lastname">Last Name</label>
-          <input type="lastname" name="lastname" id="lastname" size="100" ngModel class="form-control">
+        <div class="p-field p-grid">
+          <label for="lastname" class="p-col-fixed" style="width:100px">Last Name</label>
+          <div class="p-col">
+            <input type="lastname" name="lastname" id="lastname" size="150" ngModel class="form-control">
+          </div>
         </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" name="email" id="email" size="100" ngModel class="form-control">
+        <div class="p-field p-grid">
+          <label for="email" class="p-col-fixed" style="width:100px">Email</label>
+          <div class="p-col">
+            <input type="email" name="email" id="email" size="150" ngModel class="form-control">
+          </div>
         </div> 
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" name="password" id="password" size="100" ngModel class="form-control" required>
+        <div class="p-field p-grid">
+          <label for="password" class="p-col-fixed" style="width:100px">Password</label>
+          <div class="p-col">
+            <input type="password" name="password" id="password" size="150" ngModel class="form-control" required>
+          </div>
         </div>
-      <div class="form-group">
-          <label class="radio-inline">
+      <div class="p-field p-grid">
+          <label class="radio-inline" class="p-col-fixed" style="width:100px">
             <input type="radio" name="role" id="role" value="student" ngModel checked> Student 
           </label>
-          <label class="radio-inline">
+          <label class="radio-inline" class="p-col-fixed">
             <input type="radio" name="role" id="role1" value="instructor" ngModel> Instructor 
           </label>
-          <label class="radio-inline">
+          <label class="radio-inline" class="p-col-fixed">
             <input type="radio" name="role" id="role2" value="both" ngModel> Both 
           </label>
       </div>
-      <button type="submit" class="btn btn-primary" >Register</button>
-        <p class="text-dark mb-0">Already a member?<a href="/login"  class="text-primary ml-1">Login</a></p>
+      <button type="submit" class="btn btn-primary" style="margin-left:auto;margin-right:auto;display:block;margin-bottom:10%">Register</button>
+        <p class="text-dark mb-0">Already a member?<a href="/login"  class="text-primary ml-1"> Login</a></p>
       </form>
     </div>
   </div>
