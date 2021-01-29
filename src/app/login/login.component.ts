@@ -50,7 +50,7 @@ export class LoginComponent {
             else if(response == "instructor")
               this._router.navigateByUrl('/instructor');
             else if(response == "both")
-              this._router.navigateByUrl('choice-dashboard');
+              this._router.navigateByUrl('/choice');
             else 
               this._router.navigateByUrl('/');
           },

@@ -12,3 +12,8 @@
  .body{
     background-color: #f4511e;
  }
+
+ a:hover {
+    color:beige;
+    text-decoration: none;
+ }

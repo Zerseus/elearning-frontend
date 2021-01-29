@@ -7,7 +7,7 @@ import { CourseList } from './courselist.model';
 })
 export class SearchService {
 
-  private apiUrl = 'http://localhost:5000';
+  private apiUrl = 'http://elearning-course-operations-env.eba-f3pxw4vs.us-east-1.elasticbeanstalk.com';
 
   constructor(private http: HttpClient) { }
 

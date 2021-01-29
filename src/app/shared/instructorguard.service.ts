@@ -34,7 +34,7 @@ export class InstructorGuard implements CanActivate {
 
     canActivate() {
         // Check to see if a user has a valid token
-        if (this._auth.isLoggedIn() && this._auth.isInstructor() || this._auth.isBoth()) {
+        if (this._auth.isLoggedIn() && (this._auth.isInstructor() || this._auth.isBoth())) {
             // If they do, return true and allow the user to load app
             return true;
         }

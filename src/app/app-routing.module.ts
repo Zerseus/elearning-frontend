@@ -27,9 +27,11 @@ import {AboutusComponent} from './header/aboutus/aboutus.component';
 import { InstructorGuard } from './shared/instructorguard.service';
 import { StudentGuard } from './shared/studentguard.service';
 import { ReverseGuard } from './shared/reverseguard.service';
+import { BothGuard } from './shared/bothguard.service';
 
 import {DefaultComponent} from './layouts/default/default.component';
 import { SearchComponent } from './search/search.component';
+import { BothComponent } from './both/both.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -79,6 +81,7 @@ const appRoutes: Routes = [
   ], canActivate: [InstructorGuard]},  
   {path: 'login', component: LoginComponent, canActivate: [ReverseGuard]},
   {path: 'register', component: RegisterComponent, canActivate: [ReverseGuard]},
+  {path: 'choice', component: BothComponent, canActivate: [BothGuard]},
   {path: 'restapi', component: RestApiComponent },
   {
     path:'course-dashboard',

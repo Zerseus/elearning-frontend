@@ -34,7 +34,7 @@ export class StudentGuard implements CanActivate {
 
     canActivate() {
         // Check to see if a user has a valid token
-        if (this._auth.isLoggedIn() && this._auth.isStudent()) {
+        if (this._auth.isLoggedIn() && (this._auth.isStudent() || this._auth.isBoth())) {
             // If they do, return true and allow the user to load app
             return true;
         }

@@ -18,15 +18,15 @@
           </div>
         </div>
 
-        <button type="submit" class="btn btn-primary" style="margin-left:auto;margin-right:auto;display:block;margin-bottom:0%">Login</button>
-
+        <button type="submit" class="btn btn-primary" style="margin-left:auto;margin-right:auto;display:block;margin-bottom:10%">Login</button>
+        <p class="text-dark mb-0">Don't have an account?<a routerLink="/register"  class="text-primary ml-1"> Register</a></p>
       </form>
     </div>
   </div>
   <br />
   <div class="row message-row" *ngIf="emailVerificationMessage">
     <div class="col-lg-8">
-      <div class="alert alert-danger">
+      <div id="alert" class="alert alert-danger">
         Could not log you in.  Please verify your email and then attempt to sign in.
       </div>
     </div>

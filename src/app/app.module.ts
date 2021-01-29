@@ -57,6 +57,7 @@ import {InputTextModule} from 'primeng/inputtext';
 
 import { WavesModule, ModalModule, CarouselModule } from 'angular-bootstrap-md'
 import {MatGridListModule} from '@angular/material/grid-list';
+import { BothComponent } from './both/both.component';
 
 @NgModule({
   declarations: [
@@ -85,7 +86,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     ISidebarComponent,
     SheaderComponent,
     IHeaderComponent,
-    AddCourseComponent
+    AddCourseComponent,
+    BothComponent
   ],
   imports: [
     BrowserModule,
