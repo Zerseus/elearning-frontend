@@ -60,6 +60,8 @@ import { WavesModule, ModalModule, CarouselModule } from 'angular-bootstrap-md'
 import {MatGridListModule} from '@angular/material/grid-list';
 import { BothComponent } from './both/both.component';
 
+import {  ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -95,6 +97,7 @@ import { BothComponent } from './both/both.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     MatButtonModule,
     MatIconModule,
     MatListModule,

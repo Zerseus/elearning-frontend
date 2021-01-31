@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FileModel } from 'src/app/file-model.model';
 import { Course } from '../course.model';
 import { CourseService } from '../course.service';
 
@@ -16,7 +17,7 @@ export class AddCourseComponent implements OnInit {
   };
   submitted = false;
 
-  uploadedFiles: File[] = [];
+  uploadedFiles: any[] = [];
 
   constructor(private courseService: CourseService) { }
 
@@ -49,13 +50,30 @@ export class AddCourseComponent implements OnInit {
     };
   }
 
-  onUpload(event): void {
+ /*  onUpload(event): void {
     console.log(event.files[0]);
     this.uploadedFiles = event;
     this.courseService.upload(event.files[0]).subscribe(response => {
       console.log(response);
       this.course.url = response;
     })
+  } */
+
+  uplo: File;
+  onUpload(event) {
+    for (let file of event.files) {
+      this.uplo = file;
+    }
+    this.uploadFileToActivity();
+  }
+
+  uploadFileToActivity() {
+    this.courseService.upload(this.uplo).subscribe((response: string) => {
+      console.log(response);
+      this.course.url = response;
+    }, error => {
+      console.log(error);
+    });
   }
 }
 
