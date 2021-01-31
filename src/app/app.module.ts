@@ -54,6 +54,7 @@ import {ButtonModule} from 'primeng/button';
 import {DropdownModule} from 'primeng/dropdown';
 import {ProgressBarModule} from 'primeng/progressbar';
 import {InputTextModule} from 'primeng/inputtext';
+import {FileUploadModule} from 'primeng/fileupload';
 
 import { WavesModule, ModalModule, CarouselModule } from 'angular-bootstrap-md'
 import {MatGridListModule} from '@angular/material/grid-list';
@@ -117,7 +118,8 @@ import { BothComponent } from './both/both.component';
     ModalModule,
     CarouselModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    FileUploadModule
   ],
   providers: [AuthorizationService],
   bootstrap: [AppComponent]

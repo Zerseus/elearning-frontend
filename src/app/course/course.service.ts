@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 const baseUrl = 'http://elearningapp-env.eba-f3pxw4vs.us-east-1.elasticbeanstalk.com/api/courses';
-
+const baseUrl2 = 'http://localhost:5000/upload';
 @Injectable({
   providedIn: 'root'
 })
@@ -38,5 +38,9 @@ export class CourseService {
 
   findByTitle(title): Observable<any> {
     return this.http.get(`${baseUrl}?title=${title}`);
+  }
+
+  upload(file): Observable<any> {
+    return this.http.post<string>(baseUrl2, {file: file});
   }
 }

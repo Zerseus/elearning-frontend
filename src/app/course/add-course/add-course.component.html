@@ -23,6 +23,19 @@
             name="description"
           />
         </div>
+
+        <div class="card">
+          <h5>Upload Course Video:</h5>
+          <p-fileUpload name="demo" (uploadHandler)="onUpload($event)"
+          customUpload="true"
+                   accept="video/*" maxFileSize="10000000">
+                  <ng-template pTemplate="content">
+                      <ul>
+                          <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+                      </ul>
+                  </ng-template>
+          </p-fileUpload>
+        </div>
   
         <button (click)="saveCourse()" class="btn btn-success">Submit</button>
       </div>
