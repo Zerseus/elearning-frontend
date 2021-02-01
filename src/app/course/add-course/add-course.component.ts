@@ -47,7 +47,8 @@ export class AddCourseComponent implements OnInit {
     this.course = {
       title: '',
       description: '',
-      published: false
+      published: false,
+      url: ''
     };
   }
 
