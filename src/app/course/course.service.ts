@@ -55,7 +55,7 @@ export class CourseService {
     console.log(formData.get("file"));
 
     let headers = new HttpHeaders();
-    return this.http.post(baseUrl2, formData, { headers: headers });
+    return this.http.post(baseUrl2, formData, { responseType: 'text' });
   }
   
 }

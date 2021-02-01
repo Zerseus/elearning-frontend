@@ -27,7 +27,7 @@
         <div class="card">
           <h5>Upload Course Video:</h5>
           <p-fileUpload name="demo" (uploadHandler)="onUpload($event)"
-          customUpload="true"
+          customUpload="true" enctype="multipart/form-data"
                    accept="video/*" maxFileSize="10000000">
                   <ng-template pTemplate="content">
                       <ul>

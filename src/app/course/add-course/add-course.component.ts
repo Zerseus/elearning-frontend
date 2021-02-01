@@ -27,7 +27,8 @@ export class AddCourseComponent implements OnInit {
   saveCourse(): void {
     const data = {
       title: this.course.title,
-      description: this.course.description
+      description: this.course.description,
+      url: this.course.url
     };
 
     this.courseService.create(data)
