@@ -41,6 +41,7 @@ import { ISidebarComponent } from './shared/components/i-sidebar/i-sidebar.compo
 import {SheaderComponent} from './shared/components/sheader/sheader.component';
 import { IHeaderComponent } from './shared/components/i-header/i-header.component';
 import { AddCourseComponent } from './course/add-course/add-course.component';
+import { AddCourseContentComponent } from './course/add-course-content/add-course-content.component'
 
 import {ToolbarModule} from 'primeng/toolbar';
 import {TableModule} from 'primeng/table';
@@ -54,10 +55,13 @@ import {ButtonModule} from 'primeng/button';
 import {DropdownModule} from 'primeng/dropdown';
 import {ProgressBarModule} from 'primeng/progressbar';
 import {InputTextModule} from 'primeng/inputtext';
+import {FileUploadModule} from 'primeng/fileupload';
 
 import { WavesModule, ModalModule, CarouselModule } from 'angular-bootstrap-md'
 import {MatGridListModule} from '@angular/material/grid-list';
 import { BothComponent } from './both/both.component';
+
+import {  ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -87,13 +91,15 @@ import { BothComponent } from './both/both.component';
     SheaderComponent,
     IHeaderComponent,
     AddCourseComponent,
-    BothComponent
+    BothComponent,
+    AddCourseContentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     MatButtonModule,
     MatIconModule,
     MatListModule,
@@ -117,7 +123,8 @@ import { BothComponent } from './both/both.component';
     ModalModule,
     CarouselModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    FileUploadModule
   ],
   providers: [AuthorizationService],
   bootstrap: [AppComponent]

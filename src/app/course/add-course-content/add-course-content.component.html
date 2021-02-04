@@ -1,0 +1,125 @@
+<form [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
+    <div class="card m-3">
+        <div class="card-body">
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Add & Upload Course Chapters</label>
+                   <!-- <select formControlName="numberOfTickets" class="form-control" (change)="onChangeTickets($event)" [ngClass]="{ 'is-invalid': submitted && f.numberOfTickets.errors }">
+                        <option value=""></option>
+                        <option *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]">{{i}}</option>
+                    </select> -->
+                    
+                </div>
+            </div>
+        </div>
+        <div *ngFor="let ticket of t.controls; let i = index" class="list-group list-group-flush">
+            <div class="list-group-item">
+                <label>Chapter {{i + 1}}</label>
+                <button class="close" style="float: right" (click)="deleteChapterForm($event)">x</button>
+                <hr>
+                <div [formGroup]="ticket" class="form-row">
+                 <!--   <div class="form-group col-6">
+                        <label>Name</label>
+                        <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && ticket.controls.name.errors }" />
+                        <div *ngIf="submitted && ticket.controls.name.errors" class="invalid-feedback">
+                            <div *ngIf="ticket.controls.name.errors.required">Name is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group col-6">
+                        <label>Email</label>
+                        <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && ticket.controls.email.errors }" />
+                        <div *ngIf="submitted && ticket.controls.email.errors" class="invalid-feedback">
+                            <div *ngIf="ticket.controls.email.errors.required">Email is required</div>
+                            <div *ngIf="ticket.controls.email.errors.email">Email must be a valid email address</div>
+                        </div>
+                    </div> -->
+                    <div class="form-group">
+                        <label for="title">Chapter Title</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="title"
+                          required
+                          name="title"
+                        />
+                      </div>
+                
+                      <div class="form-group">
+                        <label for="description">Chapter Description</label>
+                        <input
+                          class="form-control"
+                          id="description"
+                          required
+                          name="description"
+                        />
+                      </div>
+                      <hr>
+
+                    <div class="btn-group" role="group" aria-label="form buttons">
+                        <button *ngIf="!showVideoButton[i]" class="btn btn-secondary mr-1" (click)="addVideoForm(i)">Add a Video</button>
+                        <button *ngIf="!showPPTButton[i]" class="btn btn-secondary mr-1" (click)="addPPTForm(i)">Add a Powerpoint</button>
+                        <button *ngIf="!showDocButton[i]" class="btn btn-secondary mr-1" (click)="addDocForm(i)">Add a Document</button>
+                    </div>
+                    <ng-container *ngIf="video[i]">
+                        <button class="close" style="float: right" (click)="deleteVideoForm(i)">x</button>
+                        <div class="card">
+                            <label>Upload Video:</label>
+                            <hr>
+                            <p-fileUpload name="demo" (uploadHandler)="onUpload($event)"
+                            customUpload="true" enctype="multipart/form-data"
+                                    accept="video/*" maxFileSize="10000000">
+                                    <ng-template pTemplate="content">
+                                        <ul>
+                                            <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+                                        </ul>
+                                    </ng-template>
+                            </p-fileUpload>
+                        </div>
+                    </ng-container>
+                    
+                    <ng-container *ngIf="ppt[i]">
+                        <button class="close" style="float: right" (click)="deletePPTForm(i)">x</button>
+                        <div class="card">
+                            <label>Upload Powerpoint:</label>
+                            <hr>
+                            <p-fileUpload name="demo" (uploadHandler)="onUpload($event)"
+                            customUpload="true" enctype="multipart/form-data"
+                                    accept=".ppt, .pptx, .odp" maxFileSize="10000000">
+                                    <ng-template pTemplate="content">
+                                        <ul>
+                                            <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+                                        </ul>
+                                    </ng-template>
+                            </p-fileUpload>
+                        </div>
+                    </ng-container>
+                    
+                    <ng-container *ngIf="doc[i]">
+                        <button class="close" style="float: right" (click)="deleteDocForm(i)">x</button>
+                        <div class="card">
+                            <label>Upload Document:</label>
+                            <hr>
+                            <p-fileUpload name="demo" (uploadHandler)="onUpload($event)"
+                            customUpload="true" enctype="multipart/form-data"
+                                    accept=".doc, .docx, .odt, .txt" maxFileSize="10000000">
+                                    <ng-template pTemplate="content">
+                                        <ul>
+                                            <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+                                        </ul>
+                                    </ng-template>
+                            </p-fileUpload>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+        <button style="background-color: aliceblue;" class="form-control" (click)="addChapterForm($event)" [ngClass]="{ 'is-invalid': submitted && f.numberOfTickets.errors }">
+            Add New Chapter
+        </button>
+        <br>
+        <div class="card-footer text-center">
+            <button class="btn btn-danger mr-1" type="reset" (click)="onReset()">Delete All Chapters</button>
+        </div>
+    </div>
+</form>
+

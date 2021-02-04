@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FileModel } from 'src/app/file-model.model';
 import { Course } from '../course.model';
 import { CourseService } from '../course.service';
+
 @Component({
   selector: 'app-add-course',
   templateUrl: './add-course.component.html',
@@ -10,9 +12,12 @@ export class AddCourseComponent implements OnInit {
   course : Course = {
     title: '',
     description: '',
-    published: false
+    published: false,
+    url: ''
   };
   submitted = false;
+
+  uploadedFiles: any[] = [];
 
   constructor(private courseService: CourseService) { }
 
@@ -22,7 +27,8 @@ export class AddCourseComponent implements OnInit {
   saveCourse(): void {
     const data = {
       title: this.course.title,
-      description: this.course.description
+      description: this.course.description,
+      url: this.course.url
     };
 
     this.courseService.create(data)
@@ -41,8 +47,20 @@ export class AddCourseComponent implements OnInit {
     this.course = {
       title: '',
       description: '',
-      published: false
+      published: false,
+      url: ''
     };
   }
+
+ /*  onUpload(event): void {
+    console.log(event.files[0]);
+    this.uploadedFiles = event;
+    this.courseService.upload(event.files[0]).subscribe(response => {
+      console.log(response);
+      this.course.url = response;
+    })
+  } */
+
+  
 }
 
