@@ -41,6 +41,7 @@ import { ISidebarComponent } from './shared/components/i-sidebar/i-sidebar.compo
 import {SheaderComponent} from './shared/components/sheader/sheader.component';
 import { IHeaderComponent } from './shared/components/i-header/i-header.component';
 import { AddCourseComponent } from './course/add-course/add-course.component';
+import { AddCourseContentComponent } from './course/add-course-content/add-course-content.component'
 
 import {ToolbarModule} from 'primeng/toolbar';
 import {TableModule} from 'primeng/table';
@@ -90,7 +91,8 @@ import {  ReactiveFormsModule } from '@angular/forms';
     SheaderComponent,
     IHeaderComponent,
     AddCourseComponent,
-    BothComponent
+    BothComponent,
+    AddCourseContentComponent
   ],
   imports: [
     BrowserModule,

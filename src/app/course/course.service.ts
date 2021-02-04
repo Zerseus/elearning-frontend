@@ -42,8 +42,6 @@ export class CourseService {
   }
 
   upload(file: File): Observable<any> {
-
-
     const formData: FormData = new FormData();
 
  //   formData.append('json', JSON.stringify(catalogacion));

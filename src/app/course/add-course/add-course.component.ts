@@ -61,21 +61,6 @@ export class AddCourseComponent implements OnInit {
     })
   } */
 
-  uplo: File;
-  onUpload(event) {
-    for (let file of event.files) {
-      this.uplo = file;
-    }
-    this.uploadFileToActivity();
-  }
-
-  uploadFileToActivity() {
-    this.courseService.upload(this.uplo).subscribe((response: string) => {
-      console.log(response);
-      this.course.url = response;
-    }, error => {
-      console.log(error);
-    });
-  }
+  
 }
 
