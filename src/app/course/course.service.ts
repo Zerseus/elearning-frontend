@@ -10,7 +10,7 @@ const baseUrl2 = 'http://localhost:5000/upload';
   providedIn: 'root'
 })
 export class CourseService {
-
+//hi
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<any> {
