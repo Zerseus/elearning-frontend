@@ -3,15 +3,26 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FileModel } from '../file-model.model';
+import { Course } from '../course';
+
+ 
 
 const baseUrl = 'http://elearningapp-env.eba-f3pxw4vs.us-east-1.elasticbeanstalk.com/api/courses';
 const baseUrl2 = 'http://localhost:5000/upload';
+ 
+
 @Injectable({
   providedIn: 'root'
 })
 export class CourseService {
+  baseUrl3= "http://localhost:5000/courses";
 
   constructor(private http: HttpClient) { }
+
+  getCourseDetailsModel(): Observable<Course[]>{
+    return this.http.get<Course[]>(this.baseUrl3);
+  }
+
 
   getAll(): Observable<any> {
     return this.http.get(baseUrl);

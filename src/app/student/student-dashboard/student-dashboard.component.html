@@ -1,151 +1,24 @@
-<mat-grid-list cols="4" rowWidth="5:1" rowHeight="320px">
-    <mat-grid-tile>
-    <mat-card class="example-card">
-        <mat-card-header>
-          <mat-card-title>Java Fundamentals</mat-card-title>
-          <mat-card-subtitle>By Abdul Bari</mat-card-subtitle>
+<p  style="font-size: 160%; font-style: italic; color: black;;"  align="center">Programming Languages Courses</p>
+<mat-grid-list cols="3" rowWidth="6:1" rowHeight="350px">
+    <mat-grid-tile *ngFor="let courses of courses">
+          <mat-card class="example cards">
+            <img mat-card-mat-card-image src={{courses.image_Url}}>
+    <mat-card-header>
+        <mat-card-title> {{courses.course_Title}}</mat-card-title>
         </mat-card-header>
-        <img mat-card-image src="https://img-a.udemycdn.com/course/240x135/802794_7b88_2.jpg?x8gwsRyNv9SkZJYZkus8DMXWc60I2wP5lePBkfEb9r1l80zRfVWN2DwS0naaWhsDn7nsmUNeBW9xaYX_co3arb-iIFNlJvfCfkYRJ5HkRfi8ndORztaCmK2EE3rHsP8">
-        <mat-card-content>
-          <p>
-            Learn Java from scratch.
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button>ENROLL</button>
-        </mat-card-actions>
-      </mat-card>
-    </mat-grid-tile>
-
-    <mat-grid-tile>
-      <mat-card class="example-card">
-        <mat-card-header>
-          <mat-card-title>Python Bootcamp</mat-card-title>
-          <mat-card-subtitle>By Jose Portilla</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src="https://img-a.udemycdn.com/course/240x135/567828_67d0.jpg?B-f2_zswYMLR2Ha1ol4hXJam4lVUtUXkkVjIF99KktFEktJLLcV8Um6vJXcEuPqq4_V3s8ockSzq-8R9UReCaBr5iIWsbfzMLioXefPflLsZkjfJqUIvsEbb924C">
-        <mat-card-content>
-          <p>
-            Learn Python from scratch.
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button>ENROLL</button>
-        </mat-card-actions>
-      </mat-card>
-    </mat-grid-tile>
-
-    <mat-grid-tile>
-        <mat-card class="example-card">
-          <mat-card-header>
-            <mat-card-title>Angular Bootcamp</mat-card-title>
-            <mat-card-subtitle>By Max Schwarz</mat-card-subtitle>
-          </mat-card-header>
-          <img mat-card-image src="https://img-a.udemycdn.com/course/240x135/756150_c033_2.jpg?ceI9B9g10w0Y541X_NytVAOetr6d4spZtmYf6q69UWwmqTbZYLKCbCby9t2FOYg8cgd_Yh5mXtJg-WFcNnLU5tb0SWdELOfdSWbypsqro3xKwD3L7jjKq5ycCr1X">
-          <mat-card-content>
-            <p>
-              Learn Angular from scratch.
-            </p>
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-button>ENROLL</button>
-          </mat-card-actions>
-        </mat-card>
-      </mat-grid-tile>
-
-      <mat-grid-tile>
-        <mat-card class="example-card">
-          <mat-card-header>
-            <mat-card-title>Spring Boot Basics</mat-card-title>
-            <mat-card-subtitle>By Isuru Samara</mat-card-subtitle>
-          </mat-card-header>
-          <img mat-card-image src="https://img-b.udemycdn.com/course/240x135/3245452_4154_2.jpg?secure=naWxUjWwh3dLeQphQBm-aQ%3D%3D%2C1611906220">
-          <mat-card-content>
-            <p>
-              Learn Spring Boot from scratch.
-            </p>
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-button>ENROLL</button>
-          </mat-card-actions>
-        </mat-card>
-      </mat-grid-tile>
-
-      <mat-grid-tile>
-        <mat-card class="example-card">
-          <mat-card-header>
-            <mat-card-title>JQuery Basics</mat-card-title>
-            <mat-card-subtitle>By Simon Sez</mat-card-subtitle>
-          </mat-card-header>
-          <img mat-card-image src="https://img-b.udemycdn.com/course/240x135/379722_2736_3.jpg?secure=21099Q-bIXGkjc2_bBEf4w%3D%3D%2C1611903863">
-          <mat-card-content>
-            <p>
-              Learn JQuery from scratch.
-            </p>
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-button>ENROLL</button>
-          </mat-card-actions>
-        </mat-card>
-      </mat-grid-tile>
-
-      <mat-grid-tile>
-        <mat-card class="example-card">
-          <mat-card-header>
-            <mat-card-title>C# Fundamentals</mat-card-title>
-            <mat-card-subtitle>By Mosh Hamed</mat-card-subtitle>
-          </mat-card-header>
-          <img mat-card-image src="https://img-a.udemycdn.com/course/240x135/382002_5d4a.jpg?kqlfB3l_lFxhZkXD1jZPhI-gnzz066c_nZAOODFgJA9WxWoi9IHvLrPJTbxb1eXTuzM1IwlhF2pqKPERMH0jvqz8aZFsLbl5b85IIoHF29-RCzsFhzaxjGuRzQ">
-          <mat-card-content>
-            <p>
-              Learn C# from scratch.
-            </p>
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-button>ENROLL</button>
-          </mat-card-actions>
-        </mat-card>
-      </mat-grid-tile>
-
-      <mat-grid-tile>
-        <mat-card class="example-card">
-          <mat-card-header>
-            <mat-card-title>JavaScript Basics</mat-card-title>
-            <mat-card-subtitle>By Jonas Schmidt</mat-card-subtitle>
-          </mat-card-header>
-          <img mat-card-image src="https://img-a.udemycdn.com/course/240x135/851712_fc61_6.jpg?Wpp_oF7cpMtuPS0P2Vs7HNqolc1gvkfHs8-YEamwjs34wshOIG-KFr1b_vAxbg2yPpzhOLVHTcnIVPKXlvQLy__WyMZM146lUk0H4WATKo5TwkzD6RRx04T5Lpyn">
-          <mat-card-content>
-            <p>
-              Learn JavaScript from scratch.
-            </p>
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-button>ENROLL</button>
-          </mat-card-actions>
-        </mat-card>
-      </mat-grid-tile>
-
-      <mat-grid-tile>
-        <mat-card class="example-card">
-          <mat-card-header>
-            <mat-card-title>AWS Introduction</mat-card-title>
-            <mat-card-subtitle>By Zeal Vora</mat-card-subtitle>
-          </mat-card-header>
-          <img mat-card-image src="https://img-a.udemycdn.com/course/240x135/1241254_9cc1.jpg?7ioU7zQq5U4Jo3u6G08geJUczIafYCsQXnVMvEgARDPYXhL3uajjud9adwnX3Zm8_das7zhfCyHxQpn1FQkIP8BiidMrL9UpOBeJwT_uXYlYCfBqdj2CS_6rBdg">
-          <mat-card-content>
-            <p>
-              Learn AWS from scratch.
-            </p>
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-button>ENROLL</button>
-          </mat-card-actions>
-        </mat-card>
-      </mat-grid-tile>
-</mat-grid-list>
-  
-
-
-
-
-  
+        
+            <mat-card-content><p>
+                {{courses.course_Description}}
+                </p>
+                
+                </mat-card-content>
+    <mat-card-actions>
+        <button mat-button color="accent">Like</button>
+        <button mat-button color="accent">ENROLL</button>
+      </mat-card-actions>
+      
+          
+      
+    </mat-card>
+</mat-grid-tile>
+  </mat-grid-list>
