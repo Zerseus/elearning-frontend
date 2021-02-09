@@ -3,10 +3,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FileModel } from '../file-model.model';
+<<<<<<< HEAD
 import { Course } from '../course';
 
  
 
+=======
+//hello
+>>>>>>> b86e17d39290420a1da0e62a8f0a1baa8bb3dcc0
 const baseUrl = 'http://elearningapp-env.eba-f3pxw4vs.us-east-1.elasticbeanstalk.com/api/courses';
 const baseUrl2 = 'http://localhost:5000/upload';
  
