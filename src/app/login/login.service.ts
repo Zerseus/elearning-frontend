@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class LoginService {
 
-  private apiUrl = 'https://ewqjz0p5p1.execute-api.us-east-1.amazonaws.com/prod';
+  private apiUrl = 'localhost:8080/user';
 
   constructor(private http: HttpClient) { }
 

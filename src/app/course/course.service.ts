@@ -4,8 +4,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FileModel } from '../file-model.model';
 //hello
-const baseUrl = 'http://elearningapp-env.eba-f3pxw4vs.us-east-1.elasticbeanstalk.com/api/courses';
-const baseUrl2 = 'http://localhost:5000/upload';
+const baseUrl = 'http://localhost:5000/courses';
+//const baseUrl2 = 'http://localhost:5000/upload';
 @Injectable({
   providedIn: 'root'
 })
@@ -53,7 +53,7 @@ export class CourseService {
     console.log(formData.get("file"));
 
     let headers = new HttpHeaders();
-    return this.http.post(baseUrl2, formData, { responseType: 'text' });
+    return this.http.post(`${baseUrl}/upload`, formData, { responseType: 'text' });
   }
   
 }
