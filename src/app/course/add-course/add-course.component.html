@@ -8,7 +8,7 @@
             class="form-control"
             id="title"
             required
-            [(ngModel)]="course.title"
+            [(ngModel)]="course.course_Title"
             name="title"
           />
         </div>
@@ -19,12 +19,12 @@
             class="form-control"
             id="description"
             required
-            [(ngModel)]="course.description"
+            [(ngModel)]="course.course_Description"
             name="description"
           />
         </div>
         <br>
-        <app-add-course-content></app-add-course-content>
+       <!-- <app-add-course-content></app-add-course-content> -->
         <br>
         <button (click)="saveCourse()" class="btn btn-success">Submit</button>
       </div>

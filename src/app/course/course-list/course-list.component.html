@@ -28,7 +28,7 @@
           [class.active]="i == currentIndex"
           (click)="setActiveCourse(course, i)"
         >
-          {{ course.title }}
+          {{ course.course_Title }}
         </li>
       </ul>
   
@@ -40,11 +40,11 @@
       <div *ngIf="currentCourse">
         <h4>Course</h4>
         <div>
-          <label><strong>Title:</strong></label> {{ currentCourse.title }}
+          <label><strong>Title:</strong></label> {{ currentCourse.course_Title }}
         </div>
         <div>
           <label><strong>Description:</strong></label>
-          {{ currentCourse.description }}
+          {{ currentCourse.course_Description }}
         </div>
         <div>
           <label><strong>Status:</strong></label>
