@@ -13,7 +13,7 @@ export class AddCourseComponent implements OnInit {
     title: '',
     description: '',
     published: false,
-    url: ''
+    image_url: ''
   };
   submitted = false;
 
@@ -28,7 +28,7 @@ export class AddCourseComponent implements OnInit {
     const data = {
       title: this.course.title,
       description: this.course.description,
-      url: this.course.url
+      url: this.course.image_url
     };
 
     this.courseService.create(data)
@@ -48,7 +48,7 @@ export class AddCourseComponent implements OnInit {
       title: '',
       description: '',
       published: false,
-      url: ''
+      image_url: ''
     };
   }
 

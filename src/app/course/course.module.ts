@@ -5,14 +5,16 @@ import { CourseDashboardComponent } from './course-dashboard/course-dashboard.co
 import { CourseDetailsComponent } from './course-details/course-details.component';
 import { CourseListComponent } from './course-list/course-list.component';
 import { CourseRoutingComponent } from './course-routing/course-routing.component';
-import { AddCourseComponent } from './add-course/add-course/add-course.component';
+import { AddCourseComponent } from './add-course/add-course.component';
 import { AddCourseContentComponent } from './add-course-content/add-course-content.component';
 import {FileUploadModule} from 'primeng/fileupload';
 import {MatIconModule} from '@angular/material/icon';
 
 
 @NgModule({
-  declarations: [CourseContentListComponent, CourseDashboardComponent, CourseDetailsComponent, CourseListComponent, CourseRoutingComponent, AddCourseComponent, AddCourseContentComponent],
+  declarations: [CourseContentListComponent, CourseDashboardComponent, 
+                  CourseDetailsComponent, CourseListComponent, CourseRoutingComponent, 
+                  AddCourseComponent, AddCourseContentComponent,],
   imports: [
     CommonModule,
     FileUploadModule,

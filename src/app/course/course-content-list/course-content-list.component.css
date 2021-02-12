@@ -1,0 +1,59 @@
+mat-grid-tile {
+    background: lightblue;
+  }
+.card{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.info{
+  position: absolute;
+  top: 20rem;
+}
+.title{
+  position: absolute;
+  top: 16rem;
+  left: 1rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.author{
+  position: absolute;
+  top: 2rem;
+  left: 1rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.course{
+  position: absolute;
+  left: 2rem;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 1.14286rem;
+  line-height: 1.7em;
+  padding-right: 100px;
+  padding-bottom: 35px;
+  letter-spacing: 0.25px;
+  color: white;
+}
+.course1{
+    position: absolute;
+    left: 2rem;
+    font-size: 1.14286rem;
+    line-height: 1.7em;
+    padding-right: 100px;
+    letter-spacing: 0.25px;
+    color: white;
+    top: 23rem;
+}
+.auth{
+  position: absolute;
+  top: 6rem;
+  left: 2rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.image{
+  background-color: #777;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    display: inline;
+    background-size: cover;
+}

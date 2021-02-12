@@ -1,1 +1,92 @@
-<p>course-content-list works!</p>
+<!-- <mat-grid-list cols="5" rowHeight="2:1">
+    <mat-grid-tile colspan=4 rowspan=3 [ngStyle]="{'background-image': 'url(https://pluralsight.imgix.net/course-images/angular-fundamentals-v1.jpg)'}">
+      <div class="course">
+          <span>
+                  <h1>Angular Fundamentals</h1>
+                  <h4>by Joe Eames and Jim Cooper</h4>
+            </span> 
+        <p>This course will teach you the fundamentals of working with the latest version of Angular. 
+        You will learn everything you need to know to create complete applications including: components, 
+        services, directives, pipes, routing, HTTP, and even testing.</p>
+      </div>
+      <div class="course1">
+        <button class="btn btn-primary">Start Course</button>
+      </div>
+    </mat-grid-tile>
+     <mat-grid-tile rowspan=7>
+      <div class="author">
+        <h3>Course Author</h3>
+      </div>
+            <div class="auth">
+              <p> <img class="image"  src="https://pluralsight.imgix.net/author/lg/joe-eames-v1.jpg?w=50" alt="Author: Joe Eames"></p>
+            </div>
+      <div class="title">
+        <h3>Course Info</h3>
+      </div>
+      <div class="info">
+        <p-table>
+          <ng-template pTemplate="header">
+            <tr>
+              <th>Level</th>
+              <th>Intermediate</th>
+            </tr>
+            <tr>
+              <th>Rating</th>
+              <th>4</th>
+            </tr>
+            <tr>
+              <th>My Rating</th>
+              <th>5</th>
+            </tr>
+            <tr>
+              <th>Duration</th>
+              <th>9h45m</th>
+            </tr>
+            <tr>
+              <th>Updated</th>
+              <th>1 Feb 2019</th>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile colspan=4 rowspan=4>
+      <div class="card">
+        <p-tabView>
+            <p-tabPanel header="Table Of Contents">
+              <p-table [columns]="cols" [value]="products">
+                <ng-template pTemplate="header" let-columns>
+                    <tr>
+                        <th *ngFor="let col of columns">
+                            {{col.header}}
+                        </th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-rowData let-columns="columns">
+                    <tr>
+                        <td *ngFor="let col of columns">
+                            <a href="#" style="color: black;">{{rowData[col.field]}}</a>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+            </p-tabPanel>
+            <p-tabPanel header="Description">
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                    architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                    voluptatem sequi nesciunt. Consectetur, adipisci velit, sed quia non numquam eius modi.</p>
+            </p-tabPanel>
+            <p-tabPanel header="Exercise Files">
+                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
+                    cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
+                    Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.</p>    
+            </p-tabPanel>
+            <p-tabPanel header="Discussion/Comments">
+              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
+                  cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
+                  Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.</p>    
+          </p-tabPanel>
+        </p-tabView>
+    </div>
+    </mat-grid-tile>
+  </mat-grid-list> -->
