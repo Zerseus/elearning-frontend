@@ -1,0 +1,38 @@
+{
+  "studentdetails": [
+    {
+      "id": 1,
+      "name": "bhanvi",
+      "emailaddress": "email@gamil.com",
+      "phoneno": 2547484
+    },
+    {
+      "id": 2,
+      "name": "name",
+      "emailaddress": "email1@gamil.com",
+      "phoneno": 25474845
+    },
+    {
+      "name": "ddff",
+      "emailaddress": "ddjjd",
+      "phoneno": "23444",
+      "id": 3
+    },
+    {
+      "name": "ddff",
+      "email address": "ddjjd",
+      "phone no.": "23444",
+      "id": 4
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

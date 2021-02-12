@@ -1,59 +1,25 @@
 <!-- Editable table -->
-<div class="card">
-    <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Student table</h3>
-    <div class="card-body">
-      <div id="table" class="table-editable">
-        <span class="table-add float-right mb-3 mr-2">
-          <a class="text-success" (click)="add()">
-            <mat-icon size="2x">add</mat-icon>
-          </a>
-        </span>
-        <table class="table table-bordered table-responsive-md table-striped text-center">
-          <tr>
-            <th class="text-center">Person Name</th>
-            <th class="text-center">Age</th>
-            <th class="text-center">Course Name</th>
-            <th class="text-center">Country</th>
-            <th class="text-center">City</th>
-            <th class="text-center">Sort</th>
-            <th class="text-center">Remove</th>
-          </tr>
-          <tr *ngFor="let person of personList; let id = index">
-            <td>
-              <span (keyup)="changeValue(id, 'name', $event)" (blur)="updateList(id, 'name', $event)" contenteditable="true">{{person.name}}</span>
-            </td>
-            <td>
-              <span contenteditable="true" (keyup)="changeValue(id, 'age', $event)" (blur)="updateList(id, 'age', $event)">{{person.age}}</span>
-            </td>
-            <td>
-              <span contenteditable="true" (keyup)="changeValue(id, 'companyName', $event)" (blur)="updateList(id, 'companyName', $event)">{{person.companyName}}</span>
-            </td>
-            <td>
-              <span contenteditable="true" (keyup)="changeValue(id, 'country', $event)" (blur)="updateList(id, 'country', $event)">{{person.country}}</span>
-            </td>
-            <td>
-              <span contenteditable="true" (keyup)="changeValue(id, 'city', $event)" (blur)="updateList(id, 'city', $event)">{{person.city}}</span>
-            </td>
-            <td>
-              <span class="table-up">
-                <a class="indigo-text">
-                    <mat-icon size="2x">arrow_upward</mat-icon>
-                </a>
-              </span>
-              <span class="table-down">
-                <a class="indigo-text">
-                    <mat-icon size="2x">arrow_downward</mat-icon>
-                </a>
-              </span>
-            </td>
-            <td>
-              <span class="table-remove">
-                <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="remove(id)">Remove</button>
-              </span>
-            </td>
-          </tr>
-        </table>
-      </div>
-    </div>
+<div class="container">
+  <div class="card mt-5" style ="align-items: center;">
+  <h1>Student Details</h1>
   </div>
-  <!-- Editable table -->
+  <div class="card mt-5" style="padding:20px;">
+    <form #registerForm="ngForm" (ngSubmit)="register()">
+      <div class="form-group">
+        <label for="name">Student Name:</label>
+        <input type="text" name (ngModel)="name" name="name" id="name" class="form-control" placeholder="name">
+      </div>
+      <div class="form-group">
+        <label for="name">Student Address:</label>
+        <input type="text" address (ngModel)="address" name="address" id="address" class="form-control" placeholder="address">
+      </div>
+      <div class="form-group">
+        <label for="name">Student Number:</label>
+        <input type="text" number (ngModel)="number" name="number" id="number" class="form-control" placeholder="number">
+      </div>
+      <div class="form-group">
+        <input type="sumbit" value="Register" class="btn btn-primary">
+      </div>
+    </form>
+  </div> 
+</div>

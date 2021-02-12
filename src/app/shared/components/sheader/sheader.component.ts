@@ -1,9 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-<<<<<<< HEAD
 import { Router } from '@angular/router';
 import { AuthorizationService } from '../../authorization.service';
-=======
->>>>>>> bhanvi
 
 @Component({
   selector: 'app-sheader',
@@ -13,12 +10,8 @@ import { AuthorizationService } from '../../authorization.service';
 export class SheaderComponent implements OnInit {
 
   @Output() toggleSideBarForMe: EventEmitter<any> =new EventEmitter()
-<<<<<<< HEAD
   constructor(public _auth: AuthorizationService,
     private _router: Router) { }
-=======
-  constructor() { }
->>>>>>> bhanvi
 
   ngOnInit(){ }
 
@@ -32,13 +25,9 @@ export class SheaderComponent implements OnInit {
 
   }
 
-<<<<<<< HEAD
   doLogout(){    
     this._auth.logOut();
     this._router.navigateByUrl('/login');
   }
 
 }
-=======
-}
->>>>>>> bhanvi
