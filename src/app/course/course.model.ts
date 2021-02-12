@@ -1,14 +1,14 @@
-import { CourseContent } from "./coursecontent.model";
+
+import { CourseContent } from "./course-content.model";
 
 export class Course {
-    id?: number;
-    course_requirement?: string;
-    what_you_learn?: string;
-    title?: string;
-    description?: string;
-    rating?: DoubleRange;
+    id?: any;
+    course_Title? : string;
+    course_Description?: string;
     published?: boolean;
-    image_url?: string;
-    instructor_id?: number;
-    courseContent?: CourseContent;
+    course_Rating?: number;
+    What_you_Learn?: string;
+    Course_Requirement?: string;
+    image_Url?: string;
+    courseContent?: Array<CourseContent>;
   }

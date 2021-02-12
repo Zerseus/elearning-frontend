@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Instructor } from 'src/app/instructor/instructor.model';
+import { InstructorService } from 'src/app/instructor/instructor.service';
+import { AuthorizationService } from 'src/app/shared/authorization.service';
 import { Course } from '../course.model';
 import { CourseService } from '../course.service';
 
@@ -14,22 +17,40 @@ export class CourseListComponent implements OnInit {
   currentIndex = -1;
   title = '';
 
-  constructor(private courseService: CourseService) { }
+  token: any;
+
+  instructor: Instructor;
+
+  constructor(private auth: AuthorizationService, private courseService: CourseService, private instructorService: InstructorService) { }
 
   ngOnInit(): void {
+    this.generateToken();
     this.retrieveCourses();
   }
 
   retrieveCourses(): void {
-    this.courseService.getAll()
+ //   console.log(this.token);
+    const headers = { 'Authorization' : this.token };  
+ //   console.log(headers);
+
+    this.instructorService.getInstructorId(headers)
       .subscribe(
-        data => {
-          this.courses = data;
-          console.log(data);
-        },
-        error => {
-          console.log(error);
-        });
+        (response: Instructor) => {
+      //    console.log(response);
+          this.instructor = JSON.parse(JSON.stringify(response));
+      //    console.log(this.instructor.id);
+      //    console.log(this.instructor.course);
+          this.courses = this.instructor.course;
+      /*    this.courseService.getAllOfInstructor(this.instructor.id)
+            .subscribe(
+              data => {
+                this.courses = data;
+                console.log(data);
+              },
+              error => {
+                console.log(error);
+              }); */
+            });
   }
 
   refreshList(): void {
@@ -65,6 +86,17 @@ export class CourseListComponent implements OnInit {
         error => {
           console.log(error);
         });
+  }
+
+  generateToken(): any {
+    this.auth.getAuthenticatedUser().getSession((err, session) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      this.token = session.getIdToken().getJwtToken();
+      return;
+    });
   }
 
 }

@@ -9,10 +9,14 @@ import { Course } from '../course.model';
 })
 export class CourseDetailsComponent implements OnInit {
 
-  currentCourse: Course = {
-    title: '',
-    description: '',
-    published: false
+  currentCourse : Course = {
+    course_Title : '',
+    course_Description: '',
+    published: false,
+    course_Rating: 3,
+    What_you_Learn: '',
+    Course_Requirement: '',
+    image_Url: '',
   };
   message = '';
 
@@ -40,8 +44,8 @@ export class CourseDetailsComponent implements OnInit {
 
   updatePublished(status: boolean): void {
     const data = {
-      title: this.currentCourse.title,
-      description: this.currentCourse.description,
+      title: this.currentCourse.course_Title,
+      description: this.currentCourse.course_Description,
       published: status
     };
 

@@ -117,9 +117,9 @@ export class AuthorizationService {
         }
         newToken = session.getIdToken().getJwtToken();
         decodedToken = jwt_decode.default(newToken);
-        console.log(decodedToken['custom:role']);
+     //   console.log(decodedToken['custom:role']);
       });
-      console.log(decodedToken['custom:role']);
+   //   console.log(decodedToken['custom:role']);
       if( decodedToken['custom:role'] == 'both' )
           return true;
       return false;
@@ -136,9 +136,9 @@ export class AuthorizationService {
       }
       newToken = session.getIdToken().getJwtToken();
       decodedToken = jwt_decode.default(newToken);
-      console.log(decodedToken['custom:role']);
+  //    console.log(decodedToken['custom:role']);
     });
-    console.log(decodedToken['custom:role']);
+  //  console.log(decodedToken['custom:role']);
     if( decodedToken['custom:role'] == 'instructor' )
         return true;
     return false;
@@ -155,11 +155,17 @@ export class AuthorizationService {
       }
       newToken = session.getIdToken().getJwtToken();
       decodedToken = jwt_decode.default(newToken);
-      console.log(decodedToken['custom:role']);
+    //  console.log(decodedToken['custom:role']);
     });
-    console.log(decodedToken['custom:role']);
+  //  console.log(decodedToken['custom:role']);
     if( decodedToken['custom:role'] == 'student' )
           return true;
       return false;
+  }
+
+  decodeToken(newToken) {
+    let decodedToken;
+    decodedToken = jwt_decode.default(newToken);
+    return decodedToken;
   }
 }

@@ -6,7 +6,11 @@ import { Injectable } from '@angular/core';
 })
 export class LoginService {
 
-  private apiUrl = 'localhost:8080/user';
+
+  //private apiUrl = 'localhost:8080/user';
+
+  private apiUrl = 'http://localhost:5000';
+
 
   constructor(private http: HttpClient) { }
 
