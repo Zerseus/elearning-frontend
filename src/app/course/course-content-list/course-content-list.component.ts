@@ -11,5 +11,5 @@ export class CourseContentListComponent implements OnInit {
 
   ngOnInit(): void {
   }
-//unity
+
 }
