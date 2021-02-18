@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FileModel } from '../file-model.model';
+import { Course } from './course.model';
 //hello
 const baseUrl = 'http://localhost:5050/courses';
 const baseUrl2 = 'http://localhost:5050/upload';
@@ -12,6 +13,10 @@ const baseUrl2 = 'http://localhost:5050/upload';
 export class CourseService {
 
   constructor(private http: HttpClient) { }
+
+  getCourseDetailsModel(): Observable<Course[]>{
+    return this.http.get<Course[]>(baseUrl);
+  }
 
   getAll(): Observable<any> {
     return this.http.get(baseUrl);

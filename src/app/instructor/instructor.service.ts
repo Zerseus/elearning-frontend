@@ -14,4 +14,12 @@ export class InstructorService {
   getInstructorId(headers): Observable<any> {
     return this.http.get(`${baseUrl}/instructorid`, {headers});
   }
+
+  get(id): Observable<any> {
+    return this.http.get(`${baseUrl}/instructor/${id}`);
+  }
+
+  update(id, data): Observable<any> {
+    return this.http.put(`${baseUrl}/instructor/${id}`, data);
+  }
 }

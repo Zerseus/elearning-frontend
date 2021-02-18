@@ -1,3 +1,4 @@
+<!--
 <mat-grid-list cols="4" rowWidth="5:1" rowHeight="320px">
     <mat-grid-tile>
     <mat-card class="example-card">
@@ -143,9 +144,48 @@
         </mat-card>
       </mat-grid-tile>
 </mat-grid-list>
-  
+ 
 
+<p  style="font-size: 160%; font-style: italic; color: black;"  align="center">Programming Languages Courses</p>
+  <mat-grid-list cols="4" rowWidth="5:1" rowHeight="320px">
+    <mat-grid-tile *ngFor="let course of courses">
+        <mat-card class="example-card">
+            <img mat-card-mat-card-image src={{course.image_Url}}>
+        <mat-card-header>
+          <mat-card-title> {{course.course_Title}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+          {{course.course_Description}}
+          </p>
+        </mat-card-content>
+      <mat-card-actions>
+        <button mat-button color="accent">Like</button>
+        <button mat-button color="accent">ENROLL</button>
+      </mat-card-actions>
+    </mat-card>
+    </mat-grid-tile>
+    </mat-grid-list>
+     -->
 
+    <mat-grid-list cols="4" rowWidth="5:1" rowHeight="320px">
+      <mat-grid-tile *ngFor="let course of courses">
+      <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title>{{course.course_Title}}</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src={{course.image_Url}}>
+          <mat-card-content>
+            <p>
+              {{course.course_Description}}
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>Like</button>
+            <button mat-button>ENROLL</button>
+          </mat-card-actions>
+        </mat-card>
+      </mat-grid-tile>
 
 
   

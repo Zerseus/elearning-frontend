@@ -59,7 +59,7 @@ const appRoutes: Routes = [
       component: InstructorDetailsComponent
     },
     {
-      path:'instructor-update-details',
+      path:'profile/:id',
       component: InstructorUpdateDetailsComponent
     },
     {
