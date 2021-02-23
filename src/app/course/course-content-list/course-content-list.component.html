@@ -1,16 +1,16 @@
-<!-- <mat-grid-list cols="5" rowHeight="2:1">
-    <mat-grid-tile colspan=4 rowspan=3 [ngStyle]="{'background-image': 'url(https://pluralsight.imgix.net/course-images/angular-fundamentals-v1.jpg)'}">
+<mat-grid-list cols="5" rowHeight="2:1">
+  <!-- [ngStyle]="{'background-image': 'url(${{courses.image_Url}})'}"-->
+    <mat-grid-tile class="courseimage" colspan=4 rowspan=3 style="background-image: url({{courses.image_Url}});">
       <div class="course">
           <span>
-                  <h1>Angular Fundamentals</h1>
+                  <p>{{courses.course_Title}}</p>
                   <h4>by Joe Eames and Jim Cooper</h4>
             </span> 
-        <p>This course will teach you the fundamentals of working with the latest version of Angular. 
-        You will learn everything you need to know to create complete applications including: components, 
-        services, directives, pipes, routing, HTTP, and even testing.</p>
+        <h2>{{courses.what_you_Learn}}</h2>
       </div>
       <div class="course1">
-        <button class="btn btn-primary">Start Course</button>
+          <a routerLink="/courses/{{ courses.course_Id }}/chapters">
+            <button class="btn btn-primary">Start Course</button></a>
       </div>
     </mat-grid-tile>
      <mat-grid-tile rowspan=7>
@@ -32,7 +32,7 @@
             </tr>
             <tr>
               <th>Rating</th>
-              <th>4</th>
+              <th>{{courses.course_Rating}}</th>
             </tr>
             <tr>
               <th>My Rating</th>
@@ -40,7 +40,7 @@
             </tr>
             <tr>
               <th>Duration</th>
-              <th>9h45m</th>
+              <th>{{courses.Duration}}</th>
             </tr>
             <tr>
               <th>Updated</th>
@@ -54,7 +54,7 @@
       <div class="card">
         <p-tabView>
             <p-tabPanel header="Table Of Contents">
-              <p-table [columns]="cols" [value]="products">
+              <p-table [columns]="cols" [value]="chapters">
                 <ng-template pTemplate="header" let-columns>
                     <tr>
                         <th *ngFor="let col of columns">
@@ -72,21 +72,15 @@
             </p-table>
             </p-tabPanel>
             <p-tabPanel header="Description">
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-                    architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-                    voluptatem sequi nesciunt. Consectetur, adipisci velit, sed quia non numquam eius modi.</p>
+                <p>{{courses.course_Description}}</p>
             </p-tabPanel>
             <p-tabPanel header="Exercise Files">
-                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
-                    cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
-                    Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.</p>    
+                <p></p>    
             </p-tabPanel>
             <p-tabPanel header="Discussion/Comments">
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
-                  cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
-                  Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.</p>    
+              <p></p>    
           </p-tabPanel>
         </p-tabView>
     </div>
     </mat-grid-tile>
-  </mat-grid-list> -->
+  </mat-grid-list>

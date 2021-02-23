@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Course } from 'src/app/course';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Course } from 'src/app/course/course.model';
 import { CourseService } from 'src/app/course/course.service';
 
 @Component({
@@ -8,13 +9,17 @@ import { CourseService } from 'src/app/course/course.service';
   styleUrls: ['./student-dashboard.component.css']
 })
 export class StudentDashboardComponent implements OnInit {
-  courses: Course[];
-  constructor(private courseService: CourseService) { }
+  courses: Course;
+  id: Number;
+  constructor(private courseService: CourseService,
+    private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
-    this.courseService.getCourseDetailsModel().subscribe((data: Course[])=>{
-      console.log(data);
+
+    this.courseService.getAll().subscribe((data: Course)=>{
       this.courses=data;
+      console.log(this.courses);
     });
   }
 

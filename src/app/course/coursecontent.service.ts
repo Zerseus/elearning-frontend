@@ -11,7 +11,7 @@ export class CoursecontentService {
 
   constructor(private http:HttpClient) { }
 
-  getCourseContent(course_id): Observable<CourseContent[]>{
-    return this.http.get<CourseContent[]>(`${baseUrl}/${course_id}`);
+  getCourseContent(course_id): Observable<any>{
+    return this.http.get(`${baseUrl}/${course_id}/chapters`);
   }
 }

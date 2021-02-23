@@ -32,6 +32,7 @@ import { BothGuard } from './shared/bothguard.service';
 import {DefaultComponent} from './layouts/default/default.component';
 import { SearchComponent } from './search/search.component';
 import { BothComponent } from './both/both.component';
+import { CourseContentListDashboardComponent } from './course/course-content-list-dashboard/course-content-list-dashboard.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -51,7 +52,7 @@ const appRoutes: Routes = [
     {
       path:'search',
       component: SearchComponent
-    }
+    },
   ], canActivate: [StudentGuard]},  
   {path: 'instructor', component: InstructorDashboardComponent, children: [
     {
@@ -87,6 +88,20 @@ const appRoutes: Routes = [
     path:'course-dashboard',
     component: CourseDashboardComponent
   },
+  {
+    path:'courses/:id',
+    component: CourseContentListComponent, 
+    // children:[
+    //   {
+    //     path:'chapters',
+    //     component: CourseContentListDashboardComponent
+    //   }
+    // ]
+  },
+   {
+     path:'courses/:id/chapters',
+     component: CourseContentListDashboardComponent,
+   },
   {
     path:'course-content-list',
     component: CourseContentListComponent

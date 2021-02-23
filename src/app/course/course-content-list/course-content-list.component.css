@@ -1,5 +1,5 @@
 mat-grid-tile {
-    background: lightblue;
+    background: #2c3d59;
   }
 .card{
   position: absolute;
@@ -14,19 +14,31 @@ mat-grid-tile {
   position: absolute;
   top: 16rem;
   left: 1rem;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 2rem;
+  line-height: 1.7em;
+  padding-right: 100px;
+  padding-bottom: 35px;
+  letter-spacing: 0.25px;
+  color: white;
 }
 .author{
   position: absolute;
   top: 2rem;
   left: 1rem;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 2rem;
+  line-height: 1.7em;
+  padding-right: 100px;
+  padding-bottom: 35px;
+  letter-spacing: 0.25px;
+  color: white;
 }
 .course{
   position: absolute;
   left: 2rem;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-size: 1.14286rem;
+  font-size: 2rem;
   line-height: 1.7em;
   padding-right: 100px;
   padding-bottom: 35px;
@@ -56,4 +68,8 @@ mat-grid-tile {
     border-radius: 100%;
     display: inline;
     background-size: cover;
+}
+.courseimage{
+  background-size: cover;
+  display: inline;
 }

@@ -18,8 +18,8 @@ export class AddCourseComponent implements OnInit {
     course_Description: '',
     published: false,
     course_Rating: 3,
-    What_you_Learn: '',
-    Course_Requirement: '',
+    what_you_Learn: '',
+    course_Requirement: '',
     image_Url: '',
   };
   submitted = false;
@@ -83,8 +83,8 @@ export class AddCourseComponent implements OnInit {
       course_Title : '',
       course_Description: '',
       course_Rating: 3,
-      What_you_Learn: '',
-      Course_Requirement: '',
+      what_you_Learn: '',
+      course_Requirement: '',
       image_Url: '',
     };
   }

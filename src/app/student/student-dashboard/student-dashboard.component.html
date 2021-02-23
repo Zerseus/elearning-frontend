@@ -1,19 +1,17 @@
 <h4  style="font-size: 160%; top: 15rem;
 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
 color: black;;"  align="center">Programming Languages Courses</h4>
-
-<mat-grid-list cols="4" rowWidth="3:1" rowHeight="400px">
-    <mat-grid-tile *ngFor="let courses of courses">
-          <mat-card class="example cards">
-              <mat-card-header>
-                  <mat-card-title><a href="#" style="color: black;"> {{courses.course_Title}} </a></mat-card-title>
-              </mat-card-header>
-              <img class="image" mat-card-image src={{courses.image_Url}}>
-            <mat-card-actions>
-              <button mat-button color="accent">Like</button>
-              <button mat-button color="accent">ENROLL</button>
-            </mat-card-actions>
-          </mat-card>
-</mat-grid-tile>
-  </mat-grid-list>
-  
+  <mat-grid-list cols="4" rowWidth="3:1" rowHeight="400px">
+    <mat-grid-tile *ngFor="let course of courses">
+    <mat-card class="example-card">
+        <mat-card-header>
+          <a routerLink="/courses/{{ course.course_Id }}" target="_blank"><mat-card-title style="color: black;">
+            {{course.course_Title}}</mat-card-title></a>
+        </mat-card-header>
+        <img mat-card-image src={{course.image_Url}}>
+        <mat-card-actions>
+          <button mat-button>Like</button>
+          <button mat-button>ENROLL</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>

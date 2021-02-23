@@ -1,0 +1,49 @@
+<mat-grid-list cols="5" rowHeight="730px" >
+    <mat-grid-tile colspan=4 >
+        <div class="video-player-wrapper">
+            <vg-player (onPlayerReady)="videoPlayerInit($event)">
+              <vg-overlay-play></vg-overlay-play>
+              <vg-buffering></vg-buffering>
+        
+              <vg-scrub-bar>
+                <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+              </vg-scrub-bar>
+        
+              <vg-controls>
+                <vg-play-pause></vg-play-pause>
+                <vg-playback-button></vg-playback-button>
+        
+                <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+        
+                <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+        
+                <vg-mute></vg-mute>
+                <vg-volume></vg-volume>
+        
+                <vg-fullscreen></vg-fullscreen>
+              </vg-controls>
+        
+              <video #media [vgMedia]="media" [src]="currentVideo.chapter_Url" id="singleVideo" crossorigin
+              type="video/mp4">
+              </video>
+            </vg-player>
+          </div>
+    </mat-grid-tile>
+    <mat-grid-tile colspan=1>
+        <div class="card">
+            <p-table [value]="chapters" [scrollable]="true" scrollHeight="670px" selectionMode="single">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Table of Contents</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-vdo let-$index=index>
+                    <tr [pSelectableRow]="vdo">
+                        <td (click)="startPlaylistVdo(vdo, $index)">{{vdo.chapter_Title}}</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </mat-grid-tile>
+  </mat-grid-list>
