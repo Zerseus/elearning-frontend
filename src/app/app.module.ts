@@ -25,7 +25,6 @@ import {InstructorDetailsComponent} from './instructor/instructor-details/instru
 import {InstructorUpdateDetailsComponent} from './instructor/instructor-update-details/instructor-update-details.component';
 import {CourseDetailsComponent} from './course/course-details/course-details.component';
 import {CourseContentListComponent} from './course/course-content-list/course-content-list.component';
-import {CourseDashboardComponent} from './course/course-dashboard/course-dashboard.component';
 import {CourseListComponent} from './course/course-list/course-list.component';
 import { StudentDashboardComponent } from './student/student-dashboard/student-dashboard.component';
 import { StudentDetailsComponent } from './student/student-details/student-details.component';
@@ -60,8 +59,14 @@ import {FileUploadModule} from 'primeng/fileupload';
 import { WavesModule, ModalModule, CarouselModule } from 'angular-bootstrap-md'
 import {MatGridListModule} from '@angular/material/grid-list';
 import { BothComponent } from './both/both.component';
-
+import {TabViewModule} from 'primeng/tabview';
 import {  ReactiveFormsModule } from '@angular/forms';
+import { CourseDashboardComponent } from './course/course-dashboard/course-dashboard.component';
+import {VgCoreModule} from '@videogular/ngx-videogular/core';
+import {VgControlsModule} from '@videogular/ngx-videogular/controls';
+import {VgOverlayPlayModule} from '@videogular/ngx-videogular/overlay-play';
+import {VgBufferingModule} from '@videogular/ngx-videogular/buffering';
+import { CourseContentListDashboardComponent } from './course/course-content-list-dashboard/course-content-list-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -92,7 +97,8 @@ import {  ReactiveFormsModule } from '@angular/forms';
     IHeaderComponent,
     AddCourseComponent,
     BothComponent,
-    AddCourseContentComponent
+    AddCourseContentComponent,
+    CourseContentListDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -124,7 +130,12 @@ import {  ReactiveFormsModule } from '@angular/forms';
     CarouselModule,
     MatCardModule,
     MatGridListModule,
-    FileUploadModule
+    FileUploadModule,
+    TabViewModule,
+    VgCoreModule,
+    VgControlsModule,
+    VgOverlayPlayModule,
+    VgBufferingModule
   ],
   providers: [AuthorizationService],
   bootstrap: [AppComponent]

@@ -5,8 +5,8 @@ import { Observable } from 'rxjs';
 import { FileModel } from '../file-model.model';
 import { Course } from './course.model';
 //hello
-const baseUrl = 'http://localhost:5050/courses';
-const baseUrl2 = 'http://localhost:5050/upload';
+const baseUrl = 'http://localhost:5000/courses';
+const baseUrl2 = 'http://localhost:5000/upload';
 @Injectable({
   providedIn: 'root'
 })
@@ -21,15 +21,14 @@ export class CourseService {
   getAll(): Observable<any> {
     return this.http.get(baseUrl);
   }
-
+  
   getAllOfInstructor(id): Observable<any> {
-    return this.http.get(`http://localhost:5050/${id}/courses`);
+    return this.http.get(`http://localhost:5000/${id}/courses`);
   }
 
   get(id): Observable<any> {
     return this.http.get(`${baseUrl}/${id}`);
   }
-
   create(data, id): Observable<any> {
     console.log(data);
     return this.http.post(`${baseUrl}/${id}`, data);

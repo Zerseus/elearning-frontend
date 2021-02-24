@@ -1,0 +1,14 @@
+mat-grid-tile {
+    background: lightblue;
+  }
+.video-player-wrapper {
+    position: absolute;
+    width: 1225px;
+    margin: 0 auto;
+    height: 730px;
+}
+.card{
+  position: absolute;
+  top: 0%;
+}
+

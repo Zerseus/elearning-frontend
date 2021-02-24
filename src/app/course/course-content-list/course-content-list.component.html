@@ -1,1 +1,86 @@
-<p>course-content-list works!</p>
+<mat-grid-list cols="5" rowHeight="2:1">
+  <!-- [ngStyle]="{'background-image': 'url(${{courses.image_Url}})'}"-->
+    <mat-grid-tile class="courseimage" colspan=4 rowspan=3 style="background-image: url({{courses.image_Url}});">
+      <div class="course">
+          <span>
+                  <p>{{courses.course_Title}}</p>
+                  <h4>by Joe Eames and Jim Cooper</h4>
+            </span> 
+        <h2>{{courses.what_you_Learn}}</h2>
+      </div>
+      <div class="course1">
+          <a routerLink="/courses/{{ courses.course_Id }}/chapters">
+            <button class="btn btn-primary">Start Course</button></a>
+      </div>
+    </mat-grid-tile>
+     <mat-grid-tile rowspan=7>
+      <div class="author">
+        <h3>Course Author</h3>
+      </div>
+            <div class="auth">
+              <p> <img class="image"  src="https://pluralsight.imgix.net/author/lg/joe-eames-v1.jpg?w=50" alt="Author: Joe Eames"></p>
+            </div>
+      <div class="title">
+        <h3>Course Info</h3>
+      </div>
+      <div class="info">
+        <p-table>
+          <ng-template pTemplate="header">
+            <tr>
+              <th>Level</th>
+              <th>Intermediate</th>
+            </tr>
+            <tr>
+              <th>Rating</th>
+              <th>{{courses.course_Rating}}</th>
+            </tr>
+            <tr>
+              <th>My Rating</th>
+              <th>5</th>
+            </tr>
+            <tr>
+              <th>Duration</th>
+              <th>{{courses.Duration}}</th>
+            </tr>
+            <tr>
+              <th>Updated</th>
+              <th>1 Feb 2019</th>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile colspan=4 rowspan=4>
+      <div class="card">
+        <p-tabView>
+            <p-tabPanel header="Table Of Contents">
+              <p-table [columns]="cols" [value]="chapters">
+                <ng-template pTemplate="header" let-columns>
+                    <tr>
+                        <th *ngFor="let col of columns">
+                            {{col.header}}
+                        </th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-rowData let-columns="columns">
+                    <tr>
+                        <td *ngFor="let col of columns">
+                            <a href="#" style="color: black;">{{rowData[col.field]}}</a>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+            </p-tabPanel>
+            <p-tabPanel header="Description">
+                <p>{{courses.course_Description}}</p>
+            </p-tabPanel>
+            <p-tabPanel header="Exercise Files">
+                <p></p>    
+            </p-tabPanel>
+            <p-tabPanel header="Discussion/Comments">
+              <p></p>    
+          </p-tabPanel>
+        </p-tabView>
+    </div>
+    </mat-grid-tile>
+  </mat-grid-list>

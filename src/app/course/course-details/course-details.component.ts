@@ -14,12 +14,11 @@ export class CourseDetailsComponent implements OnInit {
     course_Description: '',
     published: false,
     course_Rating: 3,
-    What_you_Learn: '',
-    Course_Requirement: '',
+    what_you_Learn: '',
+    course_Requirement: '',
     image_Url: '',
   };
   message = '';
-
   constructor(
     private courseService: CourseService,
     private route: ActivatedRoute,
@@ -29,7 +28,6 @@ export class CourseDetailsComponent implements OnInit {
     this.message = '';
     this.getCourse(this.route.snapshot.params.id);
   }
-
   getCourse(id: string): void {
     this.courseService.get(id)
       .subscribe(
@@ -49,7 +47,7 @@ export class CourseDetailsComponent implements OnInit {
       published: status
     };
 
-    this.courseService.update(this.currentCourse.id, data)
+    this.courseService.update(this.currentCourse.course_Id, data)
       .subscribe(
         response => {
           this.currentCourse.published = status;
@@ -62,7 +60,7 @@ export class CourseDetailsComponent implements OnInit {
   }
 
   updateCourse(): void {
-    this.courseService.update(this.currentCourse.id, this.currentCourse)
+    this.courseService.update(this.currentCourse.course_Id, this.currentCourse)
       .subscribe(
         response => {
           console.log(response);
@@ -74,7 +72,7 @@ export class CourseDetailsComponent implements OnInit {
   }
 
   deleteCourse(): void {
-    this.courseService.delete(this.currentCourse.id)
+    this.courseService.delete(this.currentCourse.course_Id)
       .subscribe(
         response => {
           console.log(response);

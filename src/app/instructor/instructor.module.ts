@@ -8,7 +8,8 @@ import { InstructorUpdateDetailsComponent } from './instructor-update-details/in
 
 
 @NgModule({
-  declarations: [InstructorDashboardComponent, InstructorDetailsComponent, InstructorRoutingComponent, InstructorUpdateDetailsComponent],
+  declarations: [InstructorDashboardComponent, InstructorDetailsComponent, InstructorRoutingComponent, 
+    InstructorUpdateDetailsComponent],
   imports: [
     CommonModule
   ]
